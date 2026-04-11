@@ -18,18 +18,13 @@ export default function HomePage() {
 
   useEffect(() => {
     async function load() {
-      const [{ count: dc }, { count: dr }, { count: nt }, { data: dis }, { data: dru }, { data: nots }] = await Promise.all([
+      const [{ count: dc }, { count: dr }, { count: nt }, { data: dis }] = await Promise.all([
         supabase.from('diseases').select('*', { count: 'exact', head: true }),
         supabase.from('drugs').select('*', { count: 'exact', head: true }),
         supabase.from('notes').select('*', { count: 'exact', head: true }),
-        supabase.from('diseases').select('slug,title,tags').order('created_at', { ascending: false }).limit(4),
-        supabase.from('drugs').select('slug,title').order('created_at', { ascending: false }).limit(4),
-        supabase.from('notes').select('slug,title,content_type').order('created_at', { ascending: false }).limit(4),
+        supabase.from('diseases').select('slug,title,tags').order('created_at', { ascending: false }).limit(50),
       ])
       setCounts({ disease: dc || 0, drug: dr || 0, note: nt || 0 })
-      setRecent([...(dis || []), ...(dru || []), ...(nots || [])].sort((a, b) => 0).slice(0, 8))
-
-      // Group diseases by system tag
       const sys: Record<string, number> = {}
       ;(dis || []).forEach((d: any) => {
         const tag = (d.tags || [])[0] || 'Other'
@@ -55,15 +50,15 @@ export default function HomePage() {
 
       {/* Stat cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 48 }}>
-        <Link href="/diseases" className="card disease" style={{ textAlign: 'center', padding: 24 }}>
+        <Link href="/diseases" className="card disease" style={{ textAlign: 'center', padding: 24, textDecoration: 'none' }}>
           <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loading ? '—' : counts.disease}</div>
           <div style={{ color: 'var(--text-muted)', marginTop: 4 }}>Diseases</div>
         </Link>
-        <Link href="/drugs" className="card drug" style={{ textAlign: 'center', padding: 24 }}>
+        <Link href="/drugs" className="card drug" style={{ textAlign: 'center', padding: 24, textDecoration: 'none' }}>
           <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loading ? '—' : counts.drug}</div>
           <div style={{ color: 'var(--text-muted)', marginTop: 4 }}>Drugs</div>
         </Link>
-        <Link href="/notes" className="card note" style={{ textAlign: 'center', padding: 24 }}>
+        <Link href="/notes" className="card note" style={{ textAlign: 'center', padding: 24, textDecoration: 'none' }}>
           <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loading ? '—' : counts.note}</div>
           <div style={{ color: 'var(--text-muted)', marginTop: 4 }}>Notes</div>
         </Link>
@@ -74,7 +69,7 @@ export default function HomePage() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12, marginBottom: 48 }}>
         {[...sysOrder.filter(s => systems[s]), ...Object.keys(systems).filter(s => !sysOrder.includes(s))].map(sys => (
           systems[sys] ? (
-            <Link key={sys} href={`/diseases?system=${sys}`} className="card disease" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 18px' }}>
+            <Link key={sys} href={`/diseases?system=${sys}`} className="card disease" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 18px', textDecoration: 'none' }}>
               <span style={{ fontSize: '1.4rem' }}>{SYS_EMOJI[sys] || '📁'}</span>
               <div>
                 <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{sys}</div>
@@ -88,9 +83,18 @@ export default function HomePage() {
       {/* Quick nav */}
       <h2 style={{ marginBottom: 16 }}>Quick Links</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
-        <Link href="/diseases" className="card disease"><h3>Diseases →</h3><p>Pathophysiology & med-surg</p></Link>
-        <Link href="/drugs" className="card drug"><h3>Drug Cards →</h3><p>Pharmacology reference</p></Link>
-        <Link href="/notes" className="card note"><h3>Notes →</h3><p>Course summaries</p></Link>
+        <Link href="/diseases" className="card disease" style={{ textDecoration: 'none' }}>
+          <h3 style={{ margin: 0 }}>Diseases →</h3>
+          <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Pathophysiology & med-surg</p>
+        </Link>
+        <Link href="/drugs" className="card drug" style={{ textDecoration: 'none' }}>
+          <h3 style={{ margin: 0 }}>Drug Cards →</h3>
+          <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Pharmacology reference</p>
+        </Link>
+        <Link href="/notes" className="card note" style={{ textDecoration: 'none' }}>
+          <h3 style={{ margin: 0 }}>Notes →</h3>
+          <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Course summaries</p>
+        </Link>
       </div>
     </main>
   )
