@@ -21,6 +21,7 @@ export interface DiseaseListItem {
   tags: string[]
   incidence: string
   created_date: string
+  updated_at?: string
 }
 
 export interface Drug {
@@ -39,6 +40,7 @@ export interface DrugListItem {
   tags: string[]
   classification: string
   trade_names: string
+  created_date?: string
 }
 
 export interface Note {
@@ -56,12 +58,13 @@ export interface NoteListItem {
   content_type: string
   course_code: string
   tags: string[]
+  created_date?: string
 }
 
 export async function getDiseases(): Promise<DiseaseListItem[]> {
   const { data, error } = await supabase
     .from('diseases')
-    .select('slug, title, tags, incidence')
+    .select('slug, title, tags, incidence, created_date, updated_at')
     .order('title')
   if (error) throw error
   return (data || []) as DiseaseListItem[]
@@ -80,7 +83,7 @@ export async function getDisease(slug: string): Promise<Disease | null> {
 export async function getDrugs(): Promise<DrugListItem[]> {
   const { data, error } = await supabase
     .from('drugs')
-    .select('slug, title, tags, classification, trade_names')
+    .select('slug, title, tags, classification, trade_names, created_date')
     .order('title')
   if (error) throw error
   return (data || []) as DrugListItem[]
@@ -99,7 +102,7 @@ export async function getDrug(slug: string): Promise<Drug | null> {
 export async function getNotes(): Promise<NoteListItem[]> {
   const { data, error } = await supabase
     .from('notes')
-    .select('slug, title, content_type, course_code, tags')
+    .select('slug, title, content_type, course_code, tags, created_date')
     .order('title')
   if (error) throw error
   return (data || []) as NoteListItem[]
@@ -129,25 +132,31 @@ export async function getRelated(type: string, slug: string): Promise<any[]> {
 }
 
 export async function searchContent(query: string): Promise<{diseases: DiseaseListItem[], drugs: DrugListItem[], notes: NoteListItem[]}> {
-  const { data: dis } = await supabase
-    .from('diseases')
-    .select('slug, title, tags, incidence')
-    .ilike('title', `%${query}%`)
-    .limit(10)
-  const { data: dru } = await supabase
-    .from('drugs')
-    .select('slug, title, tags, classification')
-    .ilike('title', `%${query}%`)
-    .limit(10)
-  const { data: not } = await supabase
-    .from('notes')
-    .select('slug, title, content_type, course_code')
-    .ilike('title', `%${query}%`)
-    .limit(10)
+  const pattern = `%${query}%`
+  const [dis, dru, not] = await Promise.all([
+    supabase
+      .from('diseases')
+      .select('slug, title, tags, incidence')
+      .or(`title.ilike.${pattern},tags.cs.{${query}},incidence.ilike.${pattern}`)
+      .limit(20)
+      .then(r => r.data || []),
+    supabase
+      .from('drugs')
+      .select('slug, title, tags, classification, trade_names')
+      .or(`title.ilike.${pattern},classification.ilike.${pattern},trade_names.ilike.${pattern},tags.cs.{${query}}`)
+      .limit(20)
+      .then(r => r.data || []),
+    supabase
+      .from('notes')
+      .select('slug, title, content_type, course_code, tags')
+      .or(`title.ilike.${pattern},course_code.ilike.${pattern},tags.cs.{${query}}`)
+      .limit(20)
+      .then(r => r.data || []),
+  ])
   return {
-    diseases: (dis || []) as DiseaseListItem[],
-    drugs: (dru || []) as DrugListItem[],
-    notes: (not || []) as NoteListItem[]
+    diseases: dis as DiseaseListItem[],
+    drugs: dru as DrugListItem[],
+    notes: not as NoteListItem[],
   }
 }
 

@@ -1,36 +1,27 @@
 'use client'
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { getDiseases, type DiseaseListItem } from '@/lib/supabase'
 
-// Match exact tag values — avoids 'gi' matching inside 'neurological'
 const SYS_MAP: Record<string, string[]> = {
   Gastrointestinal: ['gastrointestinal', 'gi'],
-  Hematologic:     ['hematologic', 'blood', 'coagulation'],
-  Neurological:    ['neurological'],
-  Renal:           ['renal'],
-  Endocrine:       ['endocrine'],
-  Cardiovascular:  ['cardiovascular'],
+  Hematologic: ['hematologic', 'blood', 'coagulation'],
+  Neurological: ['neurological'],
+  Renal: ['renal'],
+  Endocrine: ['endocrine'],
+  Cardiovascular: ['cardiovascular'],
   Dermatological: ['dermatological', 'integumentary'],
-  Immunology:      ['immunology', 'immunological', 'immune'],
-  Oncology:        ['oncology', 'cancer', 'carcinoma'],
-  Infectious:      ['infectious', 'infection', 'sepsis'],
-  Respiratory:     ['respiratory', 'pulmonary'],
+  Immunology: ['immunology', 'immunological', 'immune'],
+  Oncology: ['oncology', 'cancer', 'carcinoma'],
+  Infectious: ['infectious', 'infection', 'sepsis'],
+  Respiratory: ['respiratory', 'pulmonary'],
 }
 
 const SYS_EMOJI: Record<string, string> = {
-  Gastrointestinal: '🫁',
-  Hematologic:      '🩸',
-  Neurological:     '🧠',
-  Renal:            '🫘',
-  Endocrine:        '🦋',
-  Cardiovascular:   '❤️',
-  Dermatological:   '🩹',
-  Immunology:       '🛡️',
-  Oncology:         '🎗️',
-  Infectious:       '🦠',
-  Respiratory:      '🫁',
-  Other:            '📁',
+  Gastrointestinal: '🫁', Hematologic: '🩸', Neurological: '🧠', Renal: '🫘',
+  Endocrine: '🦋', Cardiovascular: '❤️', Dermatological: '🩹', Immunology: '🛡️',
+  Oncology: '🎗️', Infectious: '🦠', Respiratory: '🫁', Other: '📁',
 }
 
 function inferSystem(tags: string[]): string {
@@ -44,11 +35,17 @@ function inferSystem(tags: string[]): string {
 export default function DiseasesPage() {
   const [diseases, setDiseases] = useState<DiseaseListItem[]>([])
   const [filter, setFilter] = useState('')
+  const searchParams = useSearchParams()
+  const systemFilter = searchParams.get('system') || ''
 
   useEffect(() => { getDiseases().then(setDiseases) }, [])
 
   const filtered = filter
-    ? diseases.filter(d => d.title.toLowerCase().includes(filter.toLowerCase()) || d.tags?.some((t: string) => t.toLowerCase().includes(filter.toLowerCase())))
+    ? diseases.filter(d =>
+        d.title.toLowerCase().includes(filter.toLowerCase()) ||
+        d.tags?.some((t: string) => t.toLowerCase().includes(filter.toLowerCase())) ||
+        d.incidence?.toLowerCase().includes(filter.toLowerCase())
+      )
     : diseases
 
   const groups: Record<string, DiseaseListItem[]> = {}
@@ -59,6 +56,10 @@ export default function DiseasesPage() {
   })
   const order = [...Object.keys(SYS_MAP), 'Other'].filter(s => groups[s])
 
+  const visibleGroups = systemFilter
+    ? order.filter(s => s === systemFilter)
+    : order
+
   return (
     <main className="page-wrap">
       <div className="page-header">
@@ -67,9 +68,21 @@ export default function DiseasesPage() {
       </div>
       <div className="search-wrap">
         <span className="si">🔍</span>
-        <input type="text" placeholder="Filter diseases…" value={filter} onChange={e => setFilter(e.target.value)} autoFocus />
+        <input
+          type="text"
+          placeholder="Filter by name, tag, or incidence…"
+          value={filter}
+          onChange={e => setFilter(e.target.value)}
+          autoFocus
+        />
       </div>
-      {order.map(sys => (
+      {systemFilter && (
+        <div style={{ marginBottom: 16 }}>
+          <Link href="/diseases" className="back-btn">← All systems</Link>
+          <span style={{ marginLeft: 12, fontWeight: 600 }}>{SYS_EMOJI[systemFilter] ?? '📁'} {systemFilter}</span>
+        </div>
+      )}
+      {visibleGroups.map(sys => (
         <div key={sys}>
           <div className="system-label">
             <span className="sys-emoji">{SYS_EMOJI[sys] ?? '📁'}</span> {sys} <span className="sys-count">{groups[sys].length}</span>

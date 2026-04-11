@@ -10,11 +10,16 @@ function SearchResults() {
   const q = params.get('q') || ''
   const [results, setResults] = useState<any>({ diseases: [], drugs: [], notes: [] })
   const [loading, setLoading] = useState(true)
+  const [searchInput, setSearchInput] = useState(q)
 
   useEffect(() => {
+    setSearchInput(q)
     if (q) {
       setLoading(true)
       searchContent(q).then(r => { setResults(r); setLoading(false) })
+    } else {
+      setResults({ diseases: [], drugs: [], notes: [] })
+      setLoading(false)
     }
   }, [q])
 
@@ -23,30 +28,38 @@ function SearchResults() {
   return (
     <main className="page-wrap">
       <div className="page-header">
-        <h1>Search: {q}</h1>
-        <p>{total} results</p>
+        <h1>Search{q ? `: ${q}` : ''}</h1>
+        {q && !loading && <p>{total} result{total !== 1 ? 's' : ''}</p>}
       </div>
       <div className="search-wrap">
         <span className="si">🔍</span>
         <input
           type="text"
-          placeholder="Search…"
-          defaultValue={q}
-          onKeyDown={e => e.key === 'Enter' && router.push(`/search?q=${encodeURIComponent((e.target as HTMLInputElement).value)}`)}
+          placeholder="Search diseases, drugs, notes…"
+          value={searchInput}
+          onChange={e => setSearchInput(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && searchInput.trim() && router.push(`/search?q=${encodeURIComponent(searchInput.trim())}`)}
           autoFocus
         />
       </div>
       {loading && <div className="loading">Searching…</div>}
-      {!loading && total === 0 && <div className="empty-state">No results for &quot;{q}&quot;</div>}
+      {!loading && q && total === 0 && <div className="empty-state">No results for &quot;{q}&quot;</div>}
+      {!q && !loading && (
+        <div className="empty-state">
+          <p>Try searching for a condition, drug name, body system, or keyword.</p>
+          <p style={{ marginTop: 8, fontSize: '0.82rem' }}>Tip: Searches match titles, tags, classifications, trade names, and incidence data.</p>
+        </div>
+      )}
       {!loading && results.diseases.length > 0 && (
         <>
-          <div className="system-label">Diseases</div>
+          <div className="system-label"><span className="sys-emoji">🩺</span> Diseases <span className="sys-count">{results.diseases.length}</span></div>
           {results.diseases.map((d: any) => (
             <Link key={d.slug} href={`/diseases/${d.slug}`}>
               <div className="result-item disease">
                 <div className="ri-type">Disease</div>
                 <h4>{d.title}</h4>
                 {d.incidence && <p>{d.incidence}</p>}
+                {d.tags?.length && <p style={{ fontSize: '0.75rem', color: '#6b7280' }}>{d.tags.map((t: string) => `#${t}`).join(' ')}</p>}
               </div>
             </Link>
           ))}
@@ -54,13 +67,14 @@ function SearchResults() {
       )}
       {!loading && results.drugs.length > 0 && (
         <>
-          <div className="system-label">Drugs</div>
+          <div className="system-label"><span className="sys-emoji">💊</span> Drugs <span className="sys-count">{results.drugs.length}</span></div>
           {results.drugs.map((d: any) => (
             <Link key={d.slug} href={`/drugs/${d.slug}`}>
               <div className="result-item drug">
                 <div className="ri-type">Drug</div>
                 <h4>{d.title}</h4>
                 {d.classification && <p>{d.classification}</p>}
+                {d.trade_names && <p style={{ fontSize: '0.75rem', color: '#6b7280' }}>Trade: {d.trade_names}</p>}
               </div>
             </Link>
           ))}
@@ -68,7 +82,7 @@ function SearchResults() {
       )}
       {!loading && results.notes.length > 0 && (
         <>
-          <div className="system-label">Notes</div>
+          <div className="system-label"><span className="sys-emoji">📝</span> Notes <span className="sys-count">{results.notes.length}</span></div>
           {results.notes.map((n: any) => (
             <Link key={n.slug} href={`/notes/${n.slug}`}>
               <div className="result-item note">
