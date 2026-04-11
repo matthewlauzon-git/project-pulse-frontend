@@ -3,26 +3,26 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { getDiseases, type DiseaseListItem } from '@/lib/supabase'
 
+// Match exact tag values — avoids 'gi' matching inside 'neurological'
 const SYS_MAP: Record<string, string[]> = {
-  Cardiovascular: ['cardiac','heart','cardiovascular','hypertension','angina','mi','hf','chf','cad','atherosclerosis','arrhythmia','afib'],
-  Respiratory: ['respiratory','lung','pulmonary','copd','asthma','pneumonia','tb','bronchitis','ards'],
-  Neurological: ['neuro','brain','seizure','stroke','dementia','ms','als','parkinson','meningitis','headache','migraine'],
-  'Renal/Urinary': ['renal','kidney','urinary','aki','ckd','nephro','uti'],
-  Hematologic: ['blood','hematologic','anemia','sickle','hemophilia','thrombo','clotting','leukemia','lymphoma'],
-  Gastrointestinal: ['gi','digestive','bowel','liver','pancreat','colitis','crohn','appendic','gerd','ulcer','hepatitis','cirrhosis'],
-  Endocrine: ['thyroid','diabetes','endocrine','metabolic','cushing','addison','hyperthyroid','hypothyroid'],
-  Immunological: ['immune','lupus','hiv','allergy','autoimmune','rheumatoid'],
-  Oncology: ['cancer','tumor','leukemia','lymphoma','myeloma','melanoma','carcinoma','oncology'],
-  Infectious: ['infection','sepsis','septic','viral','bacterial','fungal','parasitic'],
-  Integumentary: ['skin','dermat','wound','burn','pressure','psoriasis','eczema'],
-  Musculoskeletal: ['bone','joint','fracture','osteoporosis','arthritis','osteoarthritis'],
+  Gastrointestinal: ['gastrointestinal', 'gi'],
+  Hematologic:     ['hematologic', 'blood', 'coagulation'],
+  Neurological:    ['neurological'],
+  Renal:           ['renal'],
+  Endocrine:       ['endocrine'],
+  Cardiovascular:  ['cardiovascular'],
+  Dermatological: ['dermatological', 'integumentary'],
+  Immunology:      ['immunological', 'immune', 'autoimmune'],
+  Oncology:        ['oncology', 'cancer', 'carcinoma'],
+  Infectious:      ['infectious', 'infection', 'sepsis'],
+  Respiratory:     ['respiratory', 'pulmonary'],
 }
 
 function inferSystem(tags: string[]): string {
   if (!tags?.length) return 'Other'
-  const ts = tags.join(' ').toLowerCase()
+  const ts = new Set(tags.map(t => t.toLowerCase()))
   for (const [sys, kws] of Object.entries(SYS_MAP))
-    if (kws.some(k => ts.includes(k))) return sys
+    if (kws.some(k => ts.has(k))) return sys
   return 'Other'
 }
 
