@@ -12,10 +12,25 @@ const SYS_MAP: Record<string, string[]> = {
   Endocrine:       ['endocrine'],
   Cardiovascular:  ['cardiovascular'],
   Dermatological: ['dermatological', 'integumentary'],
-  Immunology:      ['immunological', 'immune', 'autoimmune'],
+  Immunology:      ['immunology', 'immunological', 'immune'],
   Oncology:        ['oncology', 'cancer', 'carcinoma'],
   Infectious:      ['infectious', 'infection', 'sepsis'],
   Respiratory:     ['respiratory', 'pulmonary'],
+}
+
+const SYS_EMOJI: Record<string, string> = {
+  Gastrointestinal: '🫁',
+  Hematologic:      '🩸',
+  Neurological:     '🧠',
+  Renal:            '🫘',
+  Endocrine:        '🦋',
+  Cardiovascular:   '❤️',
+  Dermatological:   '🩹',
+  Immunology:       '🛡️',
+  Oncology:         '🎗️',
+  Infectious:       '🦠',
+  Respiratory:      '🫁',
+  Other:            '📁',
 }
 
 function inferSystem(tags: string[]): string {
@@ -56,7 +71,9 @@ export default function DiseasesPage() {
       </div>
       {order.map(sys => (
         <div key={sys}>
-          <div className="system-label">{sys}</div>
+          <div className="system-label">
+            <span className="sys-emoji">{SYS_EMOJI[sys] ?? '📁'}</span> {sys} <span className="sys-count">{groups[sys].length}</span>
+          </div>
           <div className="card-grid">
             {groups[sys].map(d => (
               <Link key={d.slug} href={`/diseases/${d.slug}`} className="card disease">
