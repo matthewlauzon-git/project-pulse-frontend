@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { getDrugs, type DrugListItem } from '@/lib/supabase'
@@ -33,7 +33,7 @@ function classifyDrug(drug: DrugListItem): string {
   return 'Other'
 }
 
-export default function DrugsPage() {
+function DrugsPageInner() {
   const [drugs, setDrugs] = useState<DrugListItem[]>([])
   const [filter, setFilter] = useState('')
   const searchParams = useSearchParams()
@@ -41,7 +41,7 @@ export default function DrugsPage() {
 
   useEffect(() => { getDrugs().then(setDrugs) }, [])
 
-  let filtered = filter
+  const filtered = filter
     ? drugs.filter(d =>
         d.title.toLowerCase().includes(filter.toLowerCase()) ||
         d.classification?.toLowerCase().includes(filter.toLowerCase()) ||
@@ -49,7 +49,6 @@ export default function DrugsPage() {
       )
     : drugs
 
-  // Group by therapeutic class
   const groups: Record<string, DrugListItem[]> = {}
   filtered.forEach(d => {
     const cls = classifyDrug(d)
@@ -57,18 +56,10 @@ export default function DrugsPage() {
     groups[cls].push(d)
   })
   const order = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length)
-
-  // If classFilter is set, only show that class
-  const visibleGroups = classFilter
-    ? order.filter(cls => cls === classFilter)
-    : order
+  const visibleGroups = classFilter ? order.filter(cls => cls === classFilter) : order
 
   return (
-    <main className="page-wrap">
-      <div className="page-header">
-        <h1>Drug Cards</h1>
-        <p>Pharmacology reference — grouped by therapeutic class</p>
-      </div>
+    <>
       <div className="search-wrap">
         <span className="si">🔍</span>
         <input
@@ -76,7 +67,6 @@ export default function DrugsPage() {
           placeholder="Filter by name, class, or trade name…"
           value={filter}
           onChange={e => setFilter(e.target.value)}
-          autoFocus
         />
       </div>
       {classFilter && (
@@ -102,6 +92,20 @@ export default function DrugsPage() {
         </div>
       ))}
       {filtered.length === 0 && <div className="empty-state">No drugs found</div>}
+    </>
+  )
+}
+
+export default function DrugsPage() {
+  return (
+    <main className="page-wrap">
+      <div className="page-header">
+        <h1>Drug Cards</h1>
+        <p>Pharmacology reference — grouped by therapeutic class</p>
+      </div>
+      <Suspense fallback={<div className="loading">Loading…</div>}>
+        <DrugsPageInner />
+      </Suspense>
     </main>
   )
 }

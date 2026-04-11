@@ -2,34 +2,27 @@
 import { useEffect, useState, use } from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
-import { getDisease, getRelated } from '@/lib/supabase'
+import { getDisease, getRelated, getSlugTypeMap, renderWikilinks } from '@/lib/supabase'
 import type { Disease } from '@/lib/supabase'
 
-// Drug slugs — wikilinks to these go to /drugs/, all others to /diseases/
-const DRUG_SLUGS = new Set<string>(["acetaminophen", "acyclovir", "albumin", "allopurinol", "amoxicillin", "azathioprine", "azithromycin", "benzoyl-peroxide", "brentuximab-vedotin", "buprenorphine", "ciprofloxacin", "clarithromycin", "cyclophosphamide", "desmopressin", "dexamethasone", "dopamine", "doxorubicin", "duloxetine", "fentanyl", "furosemide", "gabapentin", "heparin", "hydromorphone", "hydroxyurea", "insulin", "isotretinoin", "l-glutamine", "lactulose", "loperamide", "metformin", "methadone", "metoclopramide", "metronidazole", "morphine", "naloxone", "omeprazole", "ondansetron", "pantoprazole", "prednisone", "pregabalin", "ranitidine", "rituximab", "spironolactone", "sulfamethoxazole-trimethoprim", "vincristine", "voxelotor", "warfarin"])
-
-function renderWikilinks(content: string): string {
-  return content.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, slug, label) => {
-    const clean = slug.trim()
-    const prefix = DRUG_SLUGS.has(clean) ? '/drugs' : '/diseases'
-    return `[$\{label}]($\{prefix}/$\{clean})`
-  })
-}
-
 function renderHashtags(content: string): string {
-  return content.replace(/(^|\s)#([A-Za-z0-9_-]+)/g, (_, space, tag) => {
-    return `${space}\`#${tag}\``
-  })
+  return content.replace(/(^|\s)#([A-Za-z0-9_-]+)/g, (_, space, tag) => `${space}\`#${tag}\``)
 }
 
 export default function DiseasePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
   const [disease, setDisease] = useState<Disease | null>(null)
   const [related, setRelated] = useState<any[]>([])
+  const [slugMap, setSlugMap] = useState<Record<string, 'disease' | 'drug' | 'note'> | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getDisease(slug).then(d => {
+    // Fetch slug map + disease in parallel
+    Promise.all([
+      getSlugTypeMap(),
+      getDisease(slug),
+    ]).then(([map, d]) => {
+      setSlugMap(map)
       setDisease(d)
       setLoading(false)
       if (d) {
@@ -41,9 +34,8 @@ export default function DiseasePage({ params }: { params: Promise<{ slug: string
   if (loading) return <main className="page-wrap"><div className="loading">Loading…</div></main>
   if (!disease) return <main className="page-wrap"><div className="empty-state">Disease not found</div></main>
 
-  // Process content: wikilinks first, then hashtags
   let content = disease.content || ''
-  content = renderWikilinks(content)
+  if (slugMap) content = renderWikilinks(content, slugMap)
   content = renderHashtags(content)
 
   return (

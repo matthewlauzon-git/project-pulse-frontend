@@ -2,29 +2,36 @@
 import { useEffect, useState, use } from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
-import { getNote } from '@/lib/supabase'
+import { getNote, getSlugTypeMap, renderWikilinks } from '@/lib/supabase'
 import type { Note } from '@/lib/supabase'
 
-function renderWikilinks(content: string): string {
-  return content.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, slug, label) => {
-    return `[${label}](/notes/${slug.trim()})`
-  })
+function renderHashtags(content: string): string {
+  return content.replace(/(^|\s)#([A-Za-z0-9_-]+)/g, (_, space, tag) => `${space}\`#${tag}\``)
 }
 
 export default function NotePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
   const [note, setNote] = useState<Note | null>(null)
+  const [slugMap, setSlugMap] = useState<Record<string, 'disease' | 'drug' | 'note'> | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getNote(slug).then(n => { setNote(n); setLoading(false) })
+    Promise.all([
+      getSlugTypeMap(),
+      getNote(slug),
+    ]).then(([map, n]) => {
+      setSlugMap(map)
+      setNote(n)
+      setLoading(false)
+    })
   }, [slug])
 
   if (loading) return <main className="page-wrap"><div className="loading">Loading…</div></main>
   if (!note) return <main className="page-wrap"><div className="empty-state">Note not found</div></main>
 
   let content = note.content || ''
-  content = renderWikilinks(content)
+  if (slugMap) content = renderWikilinks(content, slugMap)
+  content = renderHashtags(content)
 
   return (
     <main className="page-wrap">

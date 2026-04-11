@@ -171,3 +171,30 @@ export async function resolveWikilink(slug: string): Promise<{found: boolean, ty
   if (n) return { found: true, type: 'note', url: `/notes/${slug}` }
   return { found: false }
 }
+
+// --- Wikilink routing ---
+// Cached slug→type map, fetched once per page load
+let _slugMapCache: Record<string, 'disease' | 'drug' | 'note'> | null = null
+
+export async function getSlugTypeMap(): Promise<Record<string, 'disease' | 'drug' | 'note'>> {
+  if (_slugMapCache) return _slugMapCache
+  const [dis, dru, not] = await Promise.all([
+    supabase.from('diseases').select('slug'),
+    supabase.from('drugs').select('slug'),
+    supabase.from('notes').select('slug'),
+  ])
+  _slugMapCache = {}
+  ;(dis.data || []).forEach((d: any) => { _slugMapCache![d.slug] = 'disease' })
+  ;(dru.data || []).forEach((d: any) => { _slugMapCache![d.slug] = 'drug' })
+  ;(not.data || []).forEach((d: any) => { _slugMapCache![d.slug] = 'note' })
+  return _slugMapCache
+}
+
+export function renderWikilinks(content: string, slugMap: Record<string, 'disease' | 'drug' | 'note'>): string {
+  return content.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, slug, label) => {
+    const clean = slug.trim()
+    const type = slugMap[clean]
+    if (!type) return label // unknown slug — render as plain text
+    return `[${label}](/${type === 'disease' ? 'diseases' : type === 'drug' ? 'drugs' : 'notes'}/${clean})`
+  })
+}

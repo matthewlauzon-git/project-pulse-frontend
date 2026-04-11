@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { getDiseases, type DiseaseListItem } from '@/lib/supabase'
@@ -32,7 +32,7 @@ function inferSystem(tags: string[]): string {
   return 'Other'
 }
 
-export default function DiseasesPage() {
+function DiseasesPageInner() {
   const [diseases, setDiseases] = useState<DiseaseListItem[]>([])
   const [filter, setFilter] = useState('')
   const searchParams = useSearchParams()
@@ -55,17 +55,10 @@ export default function DiseasesPage() {
     groups[sys].push(d)
   })
   const order = [...Object.keys(SYS_MAP), 'Other'].filter(s => groups[s])
-
-  const visibleGroups = systemFilter
-    ? order.filter(s => s === systemFilter)
-    : order
+  const visibleGroups = systemFilter ? order.filter(s => s === systemFilter) : order
 
   return (
-    <main className="page-wrap">
-      <div className="page-header">
-        <h1>Diseases</h1>
-        <p>Pathophysiology & Med-Surg flash cards</p>
-      </div>
+    <>
       <div className="search-wrap">
         <span className="si">🔍</span>
         <input
@@ -73,7 +66,6 @@ export default function DiseasesPage() {
           placeholder="Filter by name, tag, or incidence…"
           value={filter}
           onChange={e => setFilter(e.target.value)}
-          autoFocus
         />
       </div>
       {systemFilter && (
@@ -99,6 +91,20 @@ export default function DiseasesPage() {
         </div>
       ))}
       {filtered.length === 0 && <div className="empty-state">No diseases found</div>}
+    </>
+  )
+}
+
+export default function DiseasesPage() {
+  return (
+    <main className="page-wrap">
+      <div className="page-header">
+        <h1>Diseases</h1>
+        <p>Pathophysiology & Med-Surg flash cards</p>
+      </div>
+      <Suspense fallback={<div className="loading">Loading…</div>}>
+        <DiseasesPageInner />
+      </Suspense>
     </main>
   )
 }
