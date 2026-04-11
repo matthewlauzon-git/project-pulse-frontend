@@ -7,7 +7,7 @@ import type { Drug } from '@/lib/supabase'
 
 function renderWikilinks(content: string): string {
   return content.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, slug, label) => {
-    return `[${label}](/drugs/${slug.trim()})`
+    return `[${label}](/diseases/${slug.trim()})`
   })
 }
 

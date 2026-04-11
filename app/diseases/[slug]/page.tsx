@@ -5,11 +5,14 @@ import ReactMarkdown from 'react-markdown'
 import { getDisease, getRelated } from '@/lib/supabase'
 import type { Disease } from '@/lib/supabase'
 
+// Drug slugs — wikilinks to these go to /drugs/, all others to /diseases/
+const DRUG_SLUGS = new Set<string>(["acetaminophen", "acyclovir", "albumin", "allopurinol", "amoxicillin", "azathioprine", "azithromycin", "benzoyl-peroxide", "brentuximab-vedotin", "buprenorphine", "ciprofloxacin", "clarithromycin", "cyclophosphamide", "desmopressin", "dexamethasone", "dopamine", "doxorubicin", "duloxetine", "fentanyl", "furosemide", "gabapentin", "heparin", "hydromorphone", "hydroxyurea", "insulin", "isotretinoin", "l-glutamine", "lactulose", "loperamide", "metformin", "methadone", "metoclopramide", "metronidazole", "morphine", "naloxone", "omeprazole", "ondansetron", "pantoprazole", "prednisone", "pregabalin", "ranitidine", "rituximab", "spironolactone", "sulfamethoxazole-trimethoprim", "vincristine", "voxelotor", "warfarin"])
+
 function renderWikilinks(content: string): string {
-  // Convert [[slug|Label]] to [Label](/type/slug) markdown links
-  // First resolve what type each slug is
   return content.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, slug, label) => {
-    return `[${label}](/diseases/${slug.trim()})`
+    const clean = slug.trim()
+    const prefix = DRUG_SLUGS.has(clean) ? '/drugs' : '/diseases'
+    return `[$\{label}]($\{prefix}/$\{clean})`
   })
 }
 
