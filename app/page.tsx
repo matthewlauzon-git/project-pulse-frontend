@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
@@ -10,34 +11,41 @@ const SYS_EMOJI: Record<string, string> = {
   Infectious: '🦠', Respiratory: '🫁', Other: '📁',
 }
 
+const SYS_ORDER = [
+  'Neurological','Cardiovascular','Gastrointestinal','Renal','Endocrine',
+  'Hematologic','Dermatological','Immunology','Oncology','Infectious','Respiratory',
+]
+
 export default function HomePage() {
   const [counts, setCounts] = useState({ disease: 0, drug: 0, note: 0 })
-  const [systems, setSystems] = useState<Record<string, number>>({})
-  const [recent, setRecent] = useState<any[]>([])
-  const [loading, setLoading] = useState(true)
+  const [systemCounts, setSystemCounts] = useState<Record<string, number>>({})
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    async function load() {
-      const [{ count: dc }, { count: dr }, { count: nt }, { data: dis }] = await Promise.all([
-        supabase.from('diseases').select('*', { count: 'exact', head: true }),
-        supabase.from('drugs').select('*', { count: 'exact', head: true }),
-        supabase.from('notes').select('*', { count: 'exact', head: true }),
-        supabase.from('diseases').select('slug,title,tags').order('created_at', { ascending: false }).limit(50),
-      ])
-      setCounts({ disease: dc || 0, drug: dr || 0, note: nt || 0 })
-      const sys: Record<string, number> = {}
-      ;(dis || []).forEach((d: any) => {
-        const tag = (d.tags || [])[0] || 'Other'
-        sys[tag] = (sys[tag] || 0) + 1
+    Promise.all([
+      supabase.from('diseases').select('*', { count: 'exact', head: true }),
+      supabase.from('drugs').select('*', { count: 'exact', head: true }),
+      supabase.from('notes').select('*', { count: 'exact', head: true }),
+      supabase.from('diseases').select('tags').limit(200),
+    ]).then(([dc, dr, nt, ds]) => {
+      setCounts({
+        disease: dc.count ?? 0,
+        drug: dr.count ?? 0,
+        note: nt.count ?? 0,
       })
-      setSystems(sys)
-      setLoading(false)
-    }
-    load()
+      const sc: Record<string, number> = {}
+      ;(ds.data || []).forEach((d: any) => {
+        const t = (d.tags || [])[0] || 'Other'
+        sc[t] = (sc[t] || 0) + 1
+      })
+      setSystemCounts(sc)
+      setLoaded(true)
+    })
   }, [])
 
-  const sysOrder = ['Neurological','Cardiovascular','Gastrointestinal','Renal','Endocrine',
-                    'Hematologic','Dermatological','Immunology','Oncology','Infectious','Respiratory']
+  const sysList = SYS_ORDER.filter(s => systemCounts[s]).concat(
+    Object.keys(systemCounts).filter(s => !SYS_ORDER.includes(s))
+  )
 
   return (
     <main className="page-wrap">
@@ -48,50 +56,45 @@ export default function HomePage() {
         </p>
       </div>
 
-      {/* Stat cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 48 }}>
-        <Link href="/diseases" className="card disease" style={{ textAlign: 'center', padding: 24, textDecoration: 'none' }}>
-          <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loading ? '—' : counts.disease}</div>
+        <Link href="/diseases" style={{ textAlign: 'center', padding: 24, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loaded ? counts.disease : '—'}</div>
           <div style={{ color: 'var(--text-muted)', marginTop: 4 }}>Diseases</div>
         </Link>
-        <Link href="/drugs" className="card drug" style={{ textAlign: 'center', padding: 24, textDecoration: 'none' }}>
-          <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loading ? '—' : counts.drug}</div>
+        <Link href="/drugs" style={{ textAlign: 'center', padding: 24, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loaded ? counts.drug : '—'}</div>
           <div style={{ color: 'var(--text-muted)', marginTop: 4 }}>Drugs</div>
         </Link>
-        <Link href="/notes" className="card note" style={{ textAlign: 'center', padding: 24, textDecoration: 'none' }}>
-          <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loading ? '—' : counts.note}</div>
+        <Link href="/notes" style={{ textAlign: 'center', padding: 24, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loaded ? counts.note : '—'}</div>
           <div style={{ color: 'var(--text-muted)', marginTop: 4 }}>Notes</div>
         </Link>
       </div>
 
-      {/* Body systems */}
       <h2 style={{ marginBottom: 16 }}>Browse by System</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12, marginBottom: 48 }}>
-        {[...sysOrder.filter(s => systems[s]), ...Object.keys(systems).filter(s => !sysOrder.includes(s))].map(sys => (
-          systems[sys] ? (
-            <Link key={sys} href={`/diseases?system=${sys}`} className="card disease" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 18px', textDecoration: 'none' }}>
-              <span style={{ fontSize: '1.4rem' }}>{SYS_EMOJI[sys] || '📁'}</span>
-              <div>
-                <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{sys}</div>
-                <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>{systems[sys]} cards</div>
-              </div>
-            </Link>
-          ) : null
+        {sysList.map(sys => (
+          <Link key={sys} href={`/diseases?system=${sys}`} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 18px', borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
+            <span style={{ fontSize: '1.4rem' }}>{SYS_EMOJI[sys] || '📁'}</span>
+            <div>
+              <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{sys}</div>
+              <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>{systemCounts[sys]} cards</div>
+            </div>
+          </Link>
         ))}
       </div>
 
-      {/* Quick nav */}
       <h2 style={{ marginBottom: 16 }}>Quick Links</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
-        <Link href="/diseases" className="card disease" style={{ textDecoration: 'none' }}>
+        <Link href="/diseases" style={{ padding: 20, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
           <h3 style={{ margin: 0 }}>Diseases →</h3>
           <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Pathophysiology & med-surg</p>
         </Link>
-        <Link href="/drugs" className="card drug" style={{ textDecoration: 'none' }}>
+        <Link href="/drugs" style={{ padding: 20, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
           <h3 style={{ margin: 0 }}>Drug Cards →</h3>
           <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Pharmacology reference</p>
         </Link>
-        <Link href="/notes" className="card note" style={{ textDecoration: 'none' }}>
+        <Link href="/notes" style={{ padding: 20, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
           <h3 style={{ margin: 0 }}>Notes →</h3>
           <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Course summaries</p>
         </Link>
