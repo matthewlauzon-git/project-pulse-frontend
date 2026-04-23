@@ -1,4 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Pulse
+
+Project Pulse is a structured clinical knowledge system for nursing school. The app is intentionally narrow right now: searchable disease cards, drug cards, and notes built from Matthew's study material.
+
+This is not a generic notes app. The goal is to turn raw nursing notes into consistent clinical cards that are fast to search, easy to compare, and useful for exam-focused studying.
+
+## Current Product Focus
+
+- Organize existing markdown study notes.
+- Standardize disease and drug cards.
+- Keep content grouped by body system or drug class.
+- Preserve wikilinks between related concepts.
+- Avoid adding collaboration, graph views, or extra backend complexity until the basic content system works.
+
+## Content Workflow
+
+Put source material here:
+
+- `content/inbox/markdown`: raw `.md` files from study notes.
+- `content/inbox/references`: screenshots, PDFs, or source references that still need review.
+
+Processed output goes here:
+
+- `content/processed/diseases`: standardized disease cards.
+- `content/processed/drugs`: standardized drug cards.
+- `content/processed/procedures`: standardized procedure cards.
+- `content/processed/notes`: flexible study notes.
+
+Use these guides before processing content:
+
+- `content/templates/disease-card.md`
+- `content/templates/drug-card.md`
+- `content/templates/procedure-card.md`
+- `content/checklists/diseases-by-system.md`
+- `content/checklists/drugs-by-class.md`
+
+## Source Priority
+
+1. Matthew's own course notes and markdown files.
+2. Instructor-provided study guides and local class material.
+3. Textbooks and external references only to fill gaps or verify unclear notes.
+
+Do not mass-ingest textbooks before the card templates are stable.
 
 ## Getting Started
 
