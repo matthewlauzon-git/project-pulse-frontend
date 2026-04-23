@@ -7,16 +7,15 @@ interface DiseaseSystemRow {
   tags: string[] | null
 }
 
-const SYS_EMOJI: Record<string, string> = {
-  Neurological: '🧠', Cardiovascular: '❤️', Gastrointestinal: '🫁',
-  Renal: '🫘', Hematologic: '🩸', Endocrine: '🦋',
-  Dermatological: '🩹', Immunology: '🛡️', Oncology: '🎗️',
-  Infectious: '🦠', Respiratory: '🫁', Other: '📁',
-}
-
-const SYS_ORDER = [
-  'Neurological','Cardiovascular','Gastrointestinal','Renal','Endocrine',
-  'Hematologic','Dermatological','Immunology','Oncology','Infectious','Respiratory',
+const SYSTEM_ORDER = [
+  'Cardiovascular',
+  'Respiratory',
+  'Neurological',
+  'Endocrine',
+  'Renal',
+  'Gastrointestinal',
+  'Hematologic',
+  'Infectious',
 ]
 
 export default function HomePage() {
@@ -36,71 +35,136 @@ export default function HomePage() {
         drug: dr.count ?? 0,
         note: nt.count ?? 0,
       })
-      const sc: Record<string, number> = {}
+      const nextSystemCounts: Record<string, number> = {}
       ;((ds.data || []) as DiseaseSystemRow[]).forEach(d => {
-        const t = (d.tags || [])[0] || 'Other'
-        sc[t] = (sc[t] || 0) + 1
+        const system = (d.tags || [])[0] || 'Other'
+        nextSystemCounts[system] = (nextSystemCounts[system] || 0) + 1
       })
-      setSystemCounts(sc)
+      setSystemCounts(nextSystemCounts)
       setLoaded(true)
     })
   }, [])
 
-  const sysList = SYS_ORDER.filter(s => systemCounts[s]).concat(
-    Object.keys(systemCounts).filter(s => !SYS_ORDER.includes(s))
+  const visibleSystems = SYSTEM_ORDER.filter(system => systemCounts[system]).concat(
+    Object.keys(systemCounts).filter(system => !SYSTEM_ORDER.includes(system))
   )
 
   return (
-    <main className="page-wrap">
-      <div style={{ textAlign: 'center', marginBottom: 48 }}>
-        <h1 style={{ fontSize: '2.4rem', marginBottom: 8 }}>Project Pulse</h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>
-          Nursing patho‑pharm reference — diseases, drugs & notes
-        </p>
-      </div>
+    <main className="dashboard-page">
+      <section className="dashboard-hero">
+        <div>
+          <p className="eyebrow">Clinical Workspace</p>
+          <h1>Welcome back, future nurse.</h1>
+          <p>Search, review, and shape your nursing knowledge into disease cards, drug cards, and study notes.</p>
+        </div>
+        <Link href="/search" className="hero-search">
+          <span>⌕</span>
+          <strong>Search diseases, drugs, notes, and links</strong>
+          <kbd>Enter</kbd>
+        </Link>
+      </section>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 48 }}>
-        <Link href="/diseases" style={{ textAlign: 'center', padding: 24, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
-          <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loaded ? counts.disease : '—'}</div>
-          <div style={{ color: 'var(--text-muted)', marginTop: 4 }}>Diseases</div>
+      <section className="metric-grid">
+        <Link href="/diseases" className="metric-card">
+          <span className="metric-label">Disease Cards</span>
+          <strong>{loaded ? counts.disease : '—'}</strong>
+          <span>Pathophysiology and clinical reasoning</span>
         </Link>
-        <Link href="/drugs" style={{ textAlign: 'center', padding: 24, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
-          <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loaded ? counts.drug : '—'}</div>
-          <div style={{ color: 'var(--text-muted)', marginTop: 4 }}>Drugs</div>
+        <Link href="/drugs" className="metric-card">
+          <span className="metric-label">Drug Cards</span>
+          <strong>{loaded ? counts.drug : '—'}</strong>
+          <span>Pharmacology and nursing safety</span>
         </Link>
-        <Link href="/notes" style={{ textAlign: 'center', padding: 24, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
-          <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>{loaded ? counts.note : '—'}</div>
-          <div style={{ color: 'var(--text-muted)', marginTop: 4 }}>Notes</div>
+        <Link href="/notes" className="metric-card">
+          <span className="metric-label">Study Notes</span>
+          <strong>{loaded ? counts.note : '—'}</strong>
+          <span>Lectures, clinical notes, and exam prep</span>
         </Link>
-      </div>
+      </section>
 
-      <h2 style={{ marginBottom: 16 }}>Browse by System</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12, marginBottom: 48 }}>
-        {sysList.map(sys => (
-          <Link key={sys} href={`/diseases?system=${sys}`} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 18px', borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
-            <span style={{ fontSize: '1.4rem' }}>{SYS_EMOJI[sys] || '📁'}</span>
+      <div className="dashboard-grid">
+        <section className="panel panel-large">
+          <div className="panel-heading">
             <div>
-              <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{sys}</div>
-              <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>{systemCounts[sys]} cards</div>
+              <p className="eyebrow">Today</p>
+              <h2>Study Priorities</h2>
             </div>
-          </Link>
-        ))}
-      </div>
+            <span className="pill">MVP Focus</span>
+          </div>
+          <div className="task-list">
+            <Link href="/second-brain" className="task-row urgent">
+              <span className="task-icon">!</span>
+              <div>
+                <strong>Drop raw markdown notes into the inbox</strong>
+                <p>Start with your own course notes before textbooks.</p>
+              </div>
+              <span>Open</span>
+            </Link>
+            <Link href="/diseases" className="task-row">
+              <span className="task-icon">+</span>
+              <div>
+                <strong>Review standardized disease cards</strong>
+                <p>Clinical core, nursing focus, treatment, and learning layer.</p>
+              </div>
+              <span>Browse</span>
+            </Link>
+            <Link href="/drugs" className="task-row">
+              <span className="task-icon">◆</span>
+              <div>
+                <strong>Review standardized drug cards</strong>
+                <p>Mechanism, monitoring, adverse effects, and teaching.</p>
+              </div>
+              <span>Browse</span>
+            </Link>
+          </div>
+        </section>
 
-      <h2 style={{ marginBottom: 16 }}>Quick Links</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
-        <Link href="/diseases" style={{ padding: 20, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
-          <h3 style={{ margin: 0 }}>Diseases →</h3>
-          <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Pathophysiology & med-surg</p>
-        </Link>
-        <Link href="/drugs" style={{ padding: 20, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
-          <h3 style={{ margin: 0 }}>Drug Cards →</h3>
-          <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Pharmacology reference</p>
-        </Link>
-        <Link href="/notes" style={{ padding: 20, borderRadius: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
-          <h3 style={{ margin: 0 }}>Notes →</h3>
-          <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Course summaries</p>
-        </Link>
+        <aside className="panel">
+          <div className="panel-heading">
+            <div>
+              <p className="eyebrow">Next</p>
+              <h2>Content Pipeline</h2>
+            </div>
+          </div>
+          <ol className="timeline">
+            <li><strong>Inbox</strong><span>Raw markdown notes</span></li>
+            <li><strong>Normalize</strong><span>Disease, drug, procedure templates</span></li>
+            <li><strong>Link</strong><span>Use wikilinks for related concepts</span></li>
+            <li><strong>Publish</strong><span>Render clean cards in Pulse</span></li>
+          </ol>
+        </aside>
+
+        <section className="panel">
+          <div className="panel-heading">
+            <div>
+              <p className="eyebrow">Systems</p>
+              <h2>Browse By System</h2>
+            </div>
+          </div>
+          <div className="system-grid">
+            {visibleSystems.length > 0 ? visibleSystems.slice(0, 8).map(system => (
+              <Link key={system} href={`/diseases?system=${system}`} className="system-chip">
+                <strong>{system}</strong>
+                <span>{systemCounts[system]} cards</span>
+              </Link>
+            )) : SYSTEM_ORDER.slice(0, 6).map(system => (
+              <Link key={system} href={`/diseases?system=${system}`} className="system-chip muted">
+                <strong>{system}</strong>
+                <span>Ready for cards</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="panel panel-dark">
+          <p className="eyebrow">Clinical Hours</p>
+          <div className="hours-row">
+            <strong>422</strong>
+            <span>/ 500</span>
+          </div>
+          <p>On track for semester completion.</p>
+          <div className="progress-ring">84%</div>
+        </section>
       </div>
     </main>
   )

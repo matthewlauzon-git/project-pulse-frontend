@@ -4,6 +4,15 @@ Project Pulse is a structured clinical knowledge system for nursing school. The 
 
 This is not a generic notes app. The goal is to turn raw nursing notes into consistent clinical cards that are fast to search, easy to compare, and useful for exam-focused studying.
 
+## Quick Links
+
+- Start here: `START_HERE.md`
+- Repo map: `PROJECT_INDEX.md`
+- Content workflow: `docs/content-intake.md`
+- Disease template: `content/templates/disease-card.md`
+- Drug template: `content/templates/drug-card.md`
+- Procedure template: `content/templates/procedure-card.md`
+
 ## Current Product Focus
 
 - Organize existing markdown study notes.
