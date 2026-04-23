@@ -3,7 +3,7 @@ import { useEffect, useState, use } from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import { getDisease, getRelated } from '@/lib/supabase'
-import type { Disease } from '@/lib/supabase'
+import type { Disease, RelatedItem } from '@/lib/supabase'
 
 function renderHashtags(content: string): string {
   return content.replace(/(^|\s)#([A-Za-z0-9_-]+)/g, (_, space, tag) => `${space}\`#${tag}\``)
@@ -29,19 +29,18 @@ function renderWikilinks(content: string): string {
   })
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const WIKILINK: any = ({ href, children }: { href?: string; children: React.ReactNode }) => {
+function Wikilink({ href, children }: { href?: string; children?: React.ReactNode }) {
   const isInternal = href?.startsWith('/diseases/') || href?.startsWith('/drugs/') || href?.startsWith('/notes/')
   if (isInternal && href) return <Link href={href} className="wikilink">{children}</Link>
   return <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>
 }
 
-const COMPONENTS = { a: WIKILINK }
+const COMPONENTS = { a: Wikilink }
 
 export default function DiseasePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
   const [disease, setDisease] = useState<Disease | null>(null)
-  const [related, setRelated] = useState<any[]>([])
+  const [related, setRelated] = useState<RelatedItem[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

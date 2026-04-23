@@ -3,26 +3,30 @@ import { useEffect, useState, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { searchContent } from '@/lib/supabase'
+import type { SearchContentResult } from '@/lib/supabase'
+
+const EMPTY_RESULTS: SearchContentResult = { diseases: [], drugs: [], notes: [] }
 
 function SearchResults() {
   const params = useSearchParams()
   const router = useRouter()
   const q = params.get('q') || ''
-  const [results, setResults] = useState<any>({ diseases: [], drugs: [], notes: [] })
-  const [loading, setLoading] = useState(true)
-  const [searchInput, setSearchInput] = useState(q)
+  const [searchState, setSearchState] = useState<{ query: string; results: SearchContentResult }>({
+    query: '',
+    results: EMPTY_RESULTS,
+  })
 
   useEffect(() => {
-    setSearchInput(q)
-    if (q) {
-      setLoading(true)
-      searchContent(q).then(r => { setResults(r); setLoading(false) })
-    } else {
-      setResults({ diseases: [], drugs: [], notes: [] })
-      setLoading(false)
-    }
+    if (!q) return
+    let cancelled = false
+    searchContent(q).then(results => {
+      if (!cancelled) setSearchState({ query: q, results })
+    })
+    return () => { cancelled = true }
   }, [q])
 
+  const results = q ? searchState.results : EMPTY_RESULTS
+  const loading = Boolean(q && searchState.query !== q)
   const total = results.diseases.length + results.drugs.length + results.notes.length
 
   return (
@@ -36,9 +40,11 @@ function SearchResults() {
         <input
           type="text"
           placeholder="Search diseases, drugs, notes…"
-          value={searchInput}
-          onChange={e => setSearchInput(e.target.value)}
-          onKeyDown={e => e.key === 'Enter' && searchInput.trim() && router.push(`/search?q=${encodeURIComponent(searchInput.trim())}`)}
+          defaultValue={q}
+          onKeyDown={e => {
+            const nextQuery = e.currentTarget.value.trim()
+            if (e.key === 'Enter' && nextQuery) router.push(`/search?q=${encodeURIComponent(nextQuery)}`)
+          }}
           autoFocus
         />
       </div>
@@ -53,7 +59,7 @@ function SearchResults() {
       {!loading && results.diseases.length > 0 && (
         <>
           <div className="system-label"><span className="sys-emoji">🩺</span> Diseases <span className="sys-count">{results.diseases.length}</span></div>
-          {results.diseases.map((d: any) => (
+          {results.diseases.map(d => (
             <Link key={d.slug} href={`/diseases/${d.slug}`}>
               <div className="result-item disease">
                 <div className="ri-type">Disease</div>
@@ -68,7 +74,7 @@ function SearchResults() {
       {!loading && results.drugs.length > 0 && (
         <>
           <div className="system-label"><span className="sys-emoji">💊</span> Drugs <span className="sys-count">{results.drugs.length}</span></div>
-          {results.drugs.map((d: any) => (
+          {results.drugs.map(d => (
             <Link key={d.slug} href={`/drugs/${d.slug}`}>
               <div className="result-item drug">
                 <div className="ri-type">Drug</div>
@@ -83,7 +89,7 @@ function SearchResults() {
       {!loading && results.notes.length > 0 && (
         <>
           <div className="system-label"><span className="sys-emoji">📝</span> Notes <span className="sys-count">{results.notes.length}</span></div>
-          {results.notes.map((n: any) => (
+          {results.notes.map(n => (
             <Link key={n.slug} href={`/notes/${n.slug}`}>
               <div className="result-item note">
                 <div className="ri-type">{n.content_type || 'Note'}</div>

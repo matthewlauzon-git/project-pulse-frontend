@@ -1,8 +1,11 @@
-// @ts-nocheck
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
+
+interface DiseaseSystemRow {
+  tags: string[] | null
+}
 
 const SYS_EMOJI: Record<string, string> = {
   Neurological: '🧠', Cardiovascular: '❤️', Gastrointestinal: '🫁',
@@ -34,7 +37,7 @@ export default function HomePage() {
         note: nt.count ?? 0,
       })
       const sc: Record<string, number> = {}
-      ;(ds.data || []).forEach((d: any) => {
+      ;((ds.data || []) as DiseaseSystemRow[]).forEach(d => {
         const t = (d.tags || [])[0] || 'Other'
         sc[t] = (sc[t] || 0) + 1
       })

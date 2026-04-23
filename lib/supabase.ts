@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://example.supabase.co'
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'missing-anon-key'
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
 
@@ -61,6 +61,22 @@ export interface NoteListItem {
   created_date?: string
 }
 
+export interface RelatedItem {
+  slug: string
+  title: string
+  content_type: 'disease' | 'drug' | 'note'
+}
+
+export interface SearchContentResult {
+  diseases: DiseaseListItem[]
+  drugs: DrugListItem[]
+  notes: NoteListItem[]
+}
+
+interface SlugOnly {
+  slug: string
+}
+
 export async function getDiseases(): Promise<DiseaseListItem[]> {
   const { data, error } = await supabase
     .from('diseases')
@@ -118,7 +134,7 @@ export async function getNote(slug: string): Promise<Note | null> {
   return data
 }
 
-export async function getRelated(type: string, slug: string): Promise<any[]> {
+export async function getRelated(type: string, slug: string): Promise<RelatedItem[]> {
   // Try diseases first
   if (type === 'disease') {
     const { data, error } = await supabase
@@ -131,7 +147,7 @@ export async function getRelated(type: string, slug: string): Promise<any[]> {
   return []
 }
 
-export async function searchContent(query: string): Promise<{diseases: DiseaseListItem[], drugs: DrugListItem[], notes: NoteListItem[]}> {
+export async function searchContent(query: string): Promise<SearchContentResult> {
   const pattern = `%${query}%`
   const [dis, dru, not] = await Promise.all([
     supabase
@@ -184,9 +200,9 @@ export async function getSlugTypeMap(): Promise<Record<string, 'disease' | 'drug
     supabase.from('notes').select('slug'),
   ])
   _slugMapCache = {}
-  ;(dis.data || []).forEach((d: any) => { _slugMapCache![d.slug] = 'disease' })
-  ;(dru.data || []).forEach((d: any) => { _slugMapCache![d.slug] = 'drug' })
-  ;(not.data || []).forEach((d: any) => { _slugMapCache![d.slug] = 'note' })
+  ;((dis.data || []) as SlugOnly[]).forEach(d => { _slugMapCache![d.slug] = 'disease' })
+  ;((dru.data || []) as SlugOnly[]).forEach(d => { _slugMapCache![d.slug] = 'drug' })
+  ;((not.data || []) as SlugOnly[]).forEach(d => { _slugMapCache![d.slug] = 'note' })
   return _slugMapCache
 }
 
