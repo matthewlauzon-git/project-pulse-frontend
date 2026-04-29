@@ -1,15 +1,18 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Link from 'next/link'
+import { AuthStatus } from './auth-status'
+import { GlobalSearch } from './global-search'
+import { ThemeToggle } from './theme-toggle'
 
 export const metadata: Metadata = {
-  title: 'Pulse — Nursing Knowledge',
-  description: 'Structured nursing knowledge for diseases, drugs, procedures, and notes',
+  title: 'Pulse — Nursing Class Command Center',
+  description: 'A personal nursing-school class organizer for files, deadlines, study guides, and clinical prep',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <div className="app-shell">
           <aside className="side-nav">
@@ -18,33 +21,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p>Clinical Knowledge</p>
             </div>
             <nav className="side-links">
-              <Link href="/"><span>▦</span> Dashboard</Link>
-              <Link href="/second-brain"><span>✦</span> Second Brain</Link>
-              <Link href="/diseases"><span>+</span> Diseases</Link>
-              <Link href="/drugs"><span>◆</span> Drug Cards</Link>
-              <Link href="/notes"><span>□</span> Notes</Link>
+              <Link href="/"><span>▦</span> Home</Link>
+              <Link href="/workspace"><span>▣</span> Workspace</Link>
+              <Link href="/import"><span>↥</span> Import</Link>
+              <Link href="/workspace#kit-tray"><span>✣</span> Kit Tray</Link>
+              <Link href="/search"><span>⌕</span> Search</Link>
             </nav>
             <div className="side-actions">
-              <Link href="/second-brain" className="primary-nav-action">New Clinical Note</Link>
-              <Link href="/search" className="quiet-nav-action">Search Repository</Link>
+              <ThemeToggle />
+              <Link href="/import" className="primary-nav-action">Drop In Files</Link>
+              <Link href="/workspace#kit-tray" className="quiet-nav-action">Add A Kit</Link>
             </div>
           </aside>
           <div className="app-main">
             <header className="topnav">
               <Link href="/" className="logo mobile-logo">Pulse</Link>
-              <div className="nav-links">
-                <Link href="/">Dashboard</Link>
-                <Link href="/second-brain">Second Brain</Link>
-                <Link href="/diseases">Diseases</Link>
-                <Link href="/drugs">Drugs</Link>
-                <Link href="/notes">Notes</Link>
-              </div>
-              <Link href="/search" className="top-search">Search</Link>
+              <GlobalSearch />
+              <AuthStatus />
             </header>
             {children}
             <footer className="footer">
-              <strong>Pulse Nursing Platform</strong>
-              <span>Built for focused clinical study</span>
+              <strong>Pulse Nursing Command Center</strong>
+              <span>Private class files first. Shared resources only in context.</span>
+              <Link href="/source-policy">Source policy</Link>
             </footer>
           </div>
         </div>

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "bfddbab0-d2c6-4227-b130-aeca8e109e02",
+    "createdAt": "2026-04-27T19:08:48.376Z",
+    "updatedAt": "2026-04-27T19:08:48.376Z",
+    "status": "Needs review",
+    "courseSlug": "pharmacology",
+    "courseTitle": "Pharmacology",
+    "courseCode": "PHARM",
+    "moduleSlug": "cardiac-renal-and-endocrine-meds",
+    "moduleTitle": "Cardiac, Renal, and Endocrine Meds",
+    "moduleHref": "/classes/pharmacology/modules/cardiac-renal-and-endocrine-meds",
+    "summary": "Professor said in class: lisinopril focus is before-giving checks, potassium, and renal function. Lecture slide 14: ACE inhibitors can increase potassium. Textbook chapter cardiac meds page 212: mechanism overview only.",
+    "topics": [
+      "hold parameters",
+      "potassium monitoring",
+      "renal function",
+      "patient teaching"
+    ],
+    "dates": [
+      "May 1"
+    ],
+    "sourceAnchors": [
+      {
+        "label": "Professor/course note",
+        "detail": "Professor said in class: lisinopril focus is before-giving checks, potassium, and renal function.",
+        "kind": "Professor/course",
+        "status": "Sourced"
+      },
+      {
+        "label": "Lecture slide",
+        "detail": "Lecture slide 14: ACE inhibitors can increase potassium.",
+        "kind": "Lecture slide",
+        "status": "Sourced"
+      },
+      {
+        "label": "Textbook",
+        "detail": "Textbook chapter cardiac meds page 212: mechanism overview only.",
+        "kind": "Textbook",
+        "status": "Sourced"
+      }
+    ],
+    "linkedCards": [
+      {
+        "title": "Lisinopril",
+        "href": "/drugs/lisinopril",
+        "type": "Drug"
+      }
+    ],
+    "warnings": [
+      "Keep source pointers and summaries only. Do not share full PDFs or slide decks.",
+      "Review med-action language for course context, orders, and institution policy."
+    ],
+    "rawInput": "Professor said in class: lisinopril focus is before-giving checks, potassium, and renal function.\nLecture slide 14: ACE inhibitors can increase potassium.\nTextbook chapter cardiac meds page 212: mechanism overview only.\nDue May 1: prototype drug cards.\nTopics: hold parameters, potassium monitoring, renal function, patient teaching."
+  }
+]

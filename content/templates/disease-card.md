@@ -1,6 +1,8 @@
 # Disease Card Template
 
-Use this exact structure for disease cards. Keep bullets short and link related concepts with `[[wikilinks]]`.
+Use this exact structure for disease cards. Keep every line focused on student clinical judgment:
+pattern recognition, red flags, key assessments, nursing priorities, teaching, and common test traps.
+Do not turn cards into textbook chapters or generic care plans.
 
 ---
 type: disease
@@ -11,47 +13,40 @@ tags: []
 
 # {{Disease Name}}
 
-## Clinical Core
+## Study Snapshot
 
-### Definition
+### What It Is
 
-### Pathophysiology
+### Why It Matters
 
-### Risk Factors
+### Patho In One Line
 
-### Signs And Symptoms
+## Clinical Pattern
 
-### Diagnostics
+### Who Is At Risk
 
-### Complications
+### What You See
 
-## Nursing Focus
+### What Confirms It
 
-### Assessment Priorities
+## Nursing Lens
 
-### Interventions
+### Nursing Priorities
 
-### Patient Teaching
+### Red Flags
 
-### Safety Alerts
+### Treatment Themes
 
-## Treatment
+### Patient Teaching Cues
 
-### Medications
-
-### Procedures
-
-### Lifestyle
-
-## Learning Layer
+## Exam Layer
 
 ### Exam Clues
 
-### Common Confusions
+### Common Mix-Ups
 
-### Must Remember
+### Must Remember Under Pressure
 
 ## Related
 
 - [[ ]]
-

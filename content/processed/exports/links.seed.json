@@ -1,0 +1,1190 @@
+[
+  {
+    "from_page_id": "acne-vulgaris",
+    "to_page_id": "benzoyl-peroxide"
+  },
+  {
+    "from_page_id": "acne-vulgaris",
+    "to_page_id": "isotretinoin"
+  },
+  {
+    "from_page_id": "acne-vulgaris",
+    "to_page_id": "atopic-dermatitis-eczema"
+  },
+  {
+    "from_page_id": "acne-vulgaris",
+    "to_page_id": "skin-cancers"
+  },
+  {
+    "from_page_id": "acute-confusional-states",
+    "to_page_id": "dementia"
+  },
+  {
+    "from_page_id": "acute-confusional-states",
+    "to_page_id": "encephalopathies"
+  },
+  {
+    "from_page_id": "acute-confusional-states",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "acute-confusional-states",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "acute-kidney-injury-aki",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "acute-kidney-injury-aki",
+    "to_page_id": "glomerulonephritis"
+  },
+  {
+    "from_page_id": "acute-kidney-injury-aki",
+    "to_page_id": "hemolytic-uremic-syndrome-hus"
+  },
+  {
+    "from_page_id": "acute-kidney-injury-aki",
+    "to_page_id": "nephroblastoma-wilms-tumor"
+  },
+  {
+    "from_page_id": "acute-kidney-injury-aki",
+    "to_page_id": "nephrolithiasis-kidney-stones"
+  },
+  {
+    "from_page_id": "acute-kidney-injury-aki",
+    "to_page_id": "pyelonephritis"
+  },
+  {
+    "from_page_id": "alzheimer-s-disease",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "alzheimer-s-disease",
+    "to_page_id": "dementia"
+  },
+  {
+    "from_page_id": "alzheimer-s-disease",
+    "to_page_id": "frontotemporal-dementia"
+  },
+  {
+    "from_page_id": "amyotrophic-lateral-sclerosis-als",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "appendicitis",
+    "to_page_id": "intussusception"
+  },
+  {
+    "from_page_id": "atopic-dermatitis-eczema",
+    "to_page_id": "acne-vulgaris"
+  },
+  {
+    "from_page_id": "atopic-dermatitis-eczema",
+    "to_page_id": "psoriasis-papulosquamous-disorder"
+  },
+  {
+    "from_page_id": "autonomic-hyperreflexia",
+    "to_page_id": "spinal-cord-injury"
+  },
+  {
+    "from_page_id": "autonomic-hyperreflexia",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "brain-trauma",
+    "to_page_id": "cerebral-edema"
+  },
+  {
+    "from_page_id": "brain-trauma",
+    "to_page_id": "concussion"
+  },
+  {
+    "from_page_id": "brain-trauma",
+    "to_page_id": "fentanyl"
+  },
+  {
+    "from_page_id": "brain-trauma",
+    "to_page_id": "hematomas"
+  },
+  {
+    "from_page_id": "brain-trauma",
+    "to_page_id": "spinal-cord-injury"
+  },
+  {
+    "from_page_id": "celiac-disease",
+    "to_page_id": "ulcerative-colitis"
+  },
+  {
+    "from_page_id": "cerebral-edema",
+    "to_page_id": "brain-trauma"
+  },
+  {
+    "from_page_id": "cerebral-edema",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "cerebral-edema",
+    "to_page_id": "dexamethasone"
+  },
+  {
+    "from_page_id": "cerebral-edema",
+    "to_page_id": "hydrocephalus"
+  },
+  {
+    "from_page_id": "cerebral-edema",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "cerebrovascular-disease-stroke",
+    "to_page_id": "dementia"
+  },
+  {
+    "from_page_id": "cerebrovascular-disease-stroke",
+    "to_page_id": "diabetes-mellitus"
+  },
+  {
+    "from_page_id": "cerebrovascular-disease-stroke",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "cholelithiasis-and-cholecystitis",
+    "to_page_id": "pancreatitis"
+  },
+  {
+    "from_page_id": "cholelithiasis-and-cholecystitis",
+    "to_page_id": "cirrhosis"
+  },
+  {
+    "from_page_id": "cholelithiasis-and-cholecystitis",
+    "to_page_id": "peptic-ulcer-disease"
+  },
+  {
+    "from_page_id": "chronic-kidney-disease-ckd",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "chronic-kidney-disease-ckd",
+    "to_page_id": "albumin"
+  },
+  {
+    "from_page_id": "chronic-kidney-disease-ckd",
+    "to_page_id": "diabetes-mellitus"
+  },
+  {
+    "from_page_id": "chronic-kidney-disease-ckd",
+    "to_page_id": "glomerulonephritis"
+  },
+  {
+    "from_page_id": "chronic-kidney-disease-ckd",
+    "to_page_id": "nephrotic-syndrome"
+  },
+  {
+    "from_page_id": "chronic-kidney-disease-ckd",
+    "to_page_id": "pyelonephritis"
+  },
+  {
+    "from_page_id": "cirrhosis",
+    "to_page_id": "albumin"
+  },
+  {
+    "from_page_id": "cirrhosis",
+    "to_page_id": "cholelithiasis-and-cholecystitis"
+  },
+  {
+    "from_page_id": "cirrhosis",
+    "to_page_id": "furosemide"
+  },
+  {
+    "from_page_id": "cirrhosis",
+    "to_page_id": "lactulose"
+  },
+  {
+    "from_page_id": "cirrhosis",
+    "to_page_id": "pancreatitis"
+  },
+  {
+    "from_page_id": "cirrhosis",
+    "to_page_id": "peptic-ulcer-disease"
+  },
+  {
+    "from_page_id": "cirrhosis",
+    "to_page_id": "spironolactone"
+  },
+  {
+    "from_page_id": "cns-infections",
+    "to_page_id": "acyclovir"
+  },
+  {
+    "from_page_id": "cns-infections",
+    "to_page_id": "cerebral-edema"
+  },
+  {
+    "from_page_id": "cns-infections",
+    "to_page_id": "encephalopathies"
+  },
+  {
+    "from_page_id": "cns-infections",
+    "to_page_id": "meningitis"
+  },
+  {
+    "from_page_id": "cns-infections",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "cns-tumors",
+    "to_page_id": "cerebral-edema"
+  },
+  {
+    "from_page_id": "cns-tumors",
+    "to_page_id": "dexamethasone"
+  },
+  {
+    "from_page_id": "cns-tumors",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "concussion",
+    "to_page_id": "acetaminophen"
+  },
+  {
+    "from_page_id": "concussion",
+    "to_page_id": "brain-trauma"
+  },
+  {
+    "from_page_id": "concussion",
+    "to_page_id": "headaches"
+  },
+  {
+    "from_page_id": "concussion",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "crohn-s-disease",
+    "to_page_id": "albumin"
+  },
+  {
+    "from_page_id": "crohn-s-disease",
+    "to_page_id": "appendicitis"
+  },
+  {
+    "from_page_id": "crohn-s-disease",
+    "to_page_id": "azathioprine"
+  },
+  {
+    "from_page_id": "crohn-s-disease",
+    "to_page_id": "celiac-disease"
+  },
+  {
+    "from_page_id": "crohn-s-disease",
+    "to_page_id": "ulcerative-colitis"
+  },
+  {
+    "from_page_id": "degenerative-disorders-of-the-spine",
+    "to_page_id": "spinal-cord-injury"
+  },
+  {
+    "from_page_id": "dementia",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "dementia",
+    "to_page_id": "frontotemporal-dementia"
+  },
+  {
+    "from_page_id": "dementia",
+    "to_page_id": "hydrocephalus"
+  },
+  {
+    "from_page_id": "demyelinating-disorders",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "demyelinating-disorders",
+    "to_page_id": "neuromuscular-junction-disorders"
+  },
+  {
+    "from_page_id": "diabetes-mellitus",
+    "to_page_id": "insulin"
+  },
+  {
+    "from_page_id": "diabetes-mellitus",
+    "to_page_id": "metformin"
+  },
+  {
+    "from_page_id": "diabetes-mellitus",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "diabetes-mellitus",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "diabetes-mellitus",
+    "to_page_id": "enuresis"
+  },
+  {
+    "from_page_id": "diabetes-mellitus",
+    "to_page_id": "nephrolithiasis-kidney-stones"
+  },
+  {
+    "from_page_id": "diabetes-mellitus",
+    "to_page_id": "pancreatitis"
+  },
+  {
+    "from_page_id": "diabetes-mellitus",
+    "to_page_id": "pressure-ulcers"
+  },
+  {
+    "from_page_id": "diabetes-mellitus",
+    "to_page_id": "pyelonephritis"
+  },
+  {
+    "from_page_id": "disseminated-intravascular-coagulation-dic",
+    "to_page_id": "hemophilia-a-and-b"
+  },
+  {
+    "from_page_id": "disseminated-intravascular-coagulation-dic",
+    "to_page_id": "heparin"
+  },
+  {
+    "from_page_id": "disseminated-intravascular-coagulation-dic",
+    "to_page_id": "sickle-cell-anemia"
+  },
+  {
+    "from_page_id": "diverticular-disease-diverticulosis-and-diverticulitis",
+    "to_page_id": "amoxicillin"
+  },
+  {
+    "from_page_id": "diverticular-disease-diverticulosis-and-diverticulitis",
+    "to_page_id": "appendicitis"
+  },
+  {
+    "from_page_id": "diverticular-disease-diverticulosis-and-diverticulitis",
+    "to_page_id": "ciprofloxacin"
+  },
+  {
+    "from_page_id": "diverticular-disease-diverticulosis-and-diverticulitis",
+    "to_page_id": "metronidazole"
+  },
+  {
+    "from_page_id": "diverticular-disease-diverticulosis-and-diverticulitis",
+    "to_page_id": "ulcerative-colitis"
+  },
+  {
+    "from_page_id": "ear-disorders",
+    "to_page_id": "amoxicillin"
+  },
+  {
+    "from_page_id": "ear-disorders",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "ear-disorders",
+    "to_page_id": "dexamethasone"
+  },
+  {
+    "from_page_id": "ear-disorders",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "encephalopathies",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "encephalopathies",
+    "to_page_id": "cerebral-edema"
+  },
+  {
+    "from_page_id": "encephalopathies",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "encephalopathies",
+    "to_page_id": "lactulose"
+  },
+  {
+    "from_page_id": "enuresis",
+    "to_page_id": "desmopressin"
+  },
+  {
+    "from_page_id": "enuresis",
+    "to_page_id": "diabetes-mellitus"
+  },
+  {
+    "from_page_id": "enuresis",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "enuresis",
+    "to_page_id": "vesicoureteral-reflux-vur"
+  },
+  {
+    "from_page_id": "eye-disorders",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "eye-disorders",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "frontotemporal-dementia",
+    "to_page_id": "dementia"
+  },
+  {
+    "from_page_id": "gastroesophageal-reflux-disease-gerd",
+    "to_page_id": "cirrhosis"
+  },
+  {
+    "from_page_id": "gastroesophageal-reflux-disease-gerd",
+    "to_page_id": "peptic-ulcer-disease"
+  },
+  {
+    "from_page_id": "gastroesophageal-reflux-disease-gerd",
+    "to_page_id": "ranitidine"
+  },
+  {
+    "from_page_id": "glomerulonephritis",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "glomerulonephritis",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "glomerulonephritis",
+    "to_page_id": "nephrotic-syndrome"
+  },
+  {
+    "from_page_id": "headaches",
+    "to_page_id": "cerebral-edema"
+  },
+  {
+    "from_page_id": "headaches",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "headaches",
+    "to_page_id": "meningitis"
+  },
+  {
+    "from_page_id": "hematomas",
+    "to_page_id": "brain-trauma"
+  },
+  {
+    "from_page_id": "hematomas",
+    "to_page_id": "cerebral-edema"
+  },
+  {
+    "from_page_id": "hematomas",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "hemolytic-uremic-syndrome-hus",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "hemophilia-a-and-b",
+    "to_page_id": "acetaminophen"
+  },
+  {
+    "from_page_id": "hemophilia-a-and-b",
+    "to_page_id": "desmopressin"
+  },
+  {
+    "from_page_id": "hirschsprung-disease",
+    "to_page_id": "intussusception"
+  },
+  {
+    "from_page_id": "huntington-s-disease",
+    "to_page_id": "dementia"
+  },
+  {
+    "from_page_id": "huntington-s-disease",
+    "to_page_id": "frontotemporal-dementia"
+  },
+  {
+    "from_page_id": "hydrocephalus",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "hydrocephalus",
+    "to_page_id": "dementia"
+  },
+  {
+    "from_page_id": "hydrocephalus",
+    "to_page_id": "meningitis"
+  },
+  {
+    "from_page_id": "hydrocephalus",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "intussusception",
+    "to_page_id": "appendicitis"
+  },
+  {
+    "from_page_id": "meningitis",
+    "to_page_id": "dexamethasone"
+  },
+  {
+    "from_page_id": "meningitis",
+    "to_page_id": "hydrocephalus"
+  },
+  {
+    "from_page_id": "meningitis",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "motor-neuron-syndromes",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "motor-neuron-syndromes",
+    "to_page_id": "spinal-cord-injury"
+  },
+  {
+    "from_page_id": "multiple-myeloma",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "multiple-myeloma",
+    "to_page_id": "cyclophosphamide"
+  },
+  {
+    "from_page_id": "multiple-myeloma",
+    "to_page_id": "dexamethasone"
+  },
+  {
+    "from_page_id": "multiple-myeloma",
+    "to_page_id": "doxorubicin"
+  },
+  {
+    "from_page_id": "multiple-myeloma",
+    "to_page_id": "non-hodgkin-lymphoma"
+  },
+  {
+    "from_page_id": "multiple-myeloma",
+    "to_page_id": "prednisone"
+  },
+  {
+    "from_page_id": "multiple-sclerosis-ms",
+    "to_page_id": "amyotrophic-lateral-sclerosis-als"
+  },
+  {
+    "from_page_id": "multiple-sclerosis-ms",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "nephroblastoma-wilms-tumor",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "nephroblastoma-wilms-tumor",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "nephrolithiasis-kidney-stones",
+    "to_page_id": "allopurinol"
+  },
+  {
+    "from_page_id": "nephrolithiasis-kidney-stones",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "nephrolithiasis-kidney-stones",
+    "to_page_id": "pyelonephritis"
+  },
+  {
+    "from_page_id": "nephrolithiasis-kidney-stones",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "nephrotic-syndrome",
+    "to_page_id": "albumin"
+  },
+  {
+    "from_page_id": "nephrotic-syndrome",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "nephrotic-syndrome",
+    "to_page_id": "glomerulonephritis"
+  },
+  {
+    "from_page_id": "neural-tube-defects",
+    "to_page_id": "hydrocephalus"
+  },
+  {
+    "from_page_id": "neural-tube-defects",
+    "to_page_id": "morphine"
+  },
+  {
+    "from_page_id": "neuromuscular-junction-disorders",
+    "to_page_id": "azathioprine"
+  },
+  {
+    "from_page_id": "neuromuscular-junction-disorders",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "neuromuscular-junction-disorders",
+    "to_page_id": "prednisone"
+  },
+  {
+    "from_page_id": "neuropathic-pain",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "neuropathic-pain",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "non-hodgkin-lymphoma",
+    "to_page_id": "acyclovir"
+  },
+  {
+    "from_page_id": "non-hodgkin-lymphoma",
+    "to_page_id": "allopurinol"
+  },
+  {
+    "from_page_id": "non-hodgkin-lymphoma",
+    "to_page_id": "brentuximab-vedotin"
+  },
+  {
+    "from_page_id": "non-hodgkin-lymphoma",
+    "to_page_id": "cyclophosphamide"
+  },
+  {
+    "from_page_id": "non-hodgkin-lymphoma",
+    "to_page_id": "doxorubicin"
+  },
+  {
+    "from_page_id": "non-hodgkin-lymphoma",
+    "to_page_id": "multiple-myeloma"
+  },
+  {
+    "from_page_id": "non-hodgkin-lymphoma",
+    "to_page_id": "prednisone"
+  },
+  {
+    "from_page_id": "non-hodgkin-lymphoma",
+    "to_page_id": "rituximab"
+  },
+  {
+    "from_page_id": "non-hodgkin-lymphoma",
+    "to_page_id": "vincristine"
+  },
+  {
+    "from_page_id": "olfactory-dysfunctions",
+    "to_page_id": "cerebral-edema"
+  },
+  {
+    "from_page_id": "pancreatitis",
+    "to_page_id": "azathioprine"
+  },
+  {
+    "from_page_id": "pancreatitis",
+    "to_page_id": "cholelithiasis-and-cholecystitis"
+  },
+  {
+    "from_page_id": "pancreatitis",
+    "to_page_id": "cirrhosis"
+  },
+  {
+    "from_page_id": "pancreatitis",
+    "to_page_id": "diabetes-mellitus"
+  },
+  {
+    "from_page_id": "pancreatitis",
+    "to_page_id": "peptic-ulcer-disease"
+  },
+  {
+    "from_page_id": "parkinson-s-disease",
+    "to_page_id": "dopamine"
+  },
+  {
+    "from_page_id": "parkinson-s-disease",
+    "to_page_id": "dementia"
+  },
+  {
+    "from_page_id": "peptic-ulcer-disease",
+    "to_page_id": "cirrhosis"
+  },
+  {
+    "from_page_id": "phenylketonuria-pku",
+    "to_page_id": "diabetes-mellitus"
+  },
+  {
+    "from_page_id": "phenylketonuria-pku",
+    "to_page_id": "seizures-and-epilepsy"
+  },
+  {
+    "from_page_id": "pressure-ulcers",
+    "to_page_id": "diabetes-mellitus"
+  },
+  {
+    "from_page_id": "pressure-ulcers",
+    "to_page_id": "skin-cancers"
+  },
+  {
+    "from_page_id": "pressure-ulcers",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "psoriasis-papulosquamous-disorder",
+    "to_page_id": "atopic-dermatitis-eczema"
+  },
+  {
+    "from_page_id": "psoriasis-papulosquamous-disorder",
+    "to_page_id": "pressure-ulcers"
+  },
+  {
+    "from_page_id": "psoriasis-papulosquamous-disorder",
+    "to_page_id": "skin-cancers"
+  },
+  {
+    "from_page_id": "pyelonephritis",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "pyelonephritis",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "pyelonephritis",
+    "to_page_id": "glomerulonephritis"
+  },
+  {
+    "from_page_id": "pyelonephritis",
+    "to_page_id": "nephrolithiasis-kidney-stones"
+  },
+  {
+    "from_page_id": "pyelonephritis",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "pyelonephritis",
+    "to_page_id": "vesicoureteral-reflux-vur"
+  },
+  {
+    "from_page_id": "pyloric-stenosis-infantile-hypertrophic",
+    "to_page_id": "hirschsprung-disease"
+  },
+  {
+    "from_page_id": "pyloric-stenosis-infantile-hypertrophic",
+    "to_page_id": "intussusception"
+  },
+  {
+    "from_page_id": "renal-tumours",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "renal-tumours",
+    "to_page_id": "doxorubicin"
+  },
+  {
+    "from_page_id": "renal-tumours",
+    "to_page_id": "nephroblastoma-wilms-tumor"
+  },
+  {
+    "from_page_id": "renal-tumours",
+    "to_page_id": "vincristine"
+  },
+  {
+    "from_page_id": "seizures-and-epilepsy",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "seizures-and-epilepsy",
+    "to_page_id": "hydrocephalus"
+  },
+  {
+    "from_page_id": "seizures-and-epilepsy",
+    "to_page_id": "meningitis"
+  },
+  {
+    "from_page_id": "sickle-cell-anemia",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "sickle-cell-anemia",
+    "to_page_id": "fentanyl"
+  },
+  {
+    "from_page_id": "sickle-cell-anemia",
+    "to_page_id": "hydroxyurea"
+  },
+  {
+    "from_page_id": "sickle-cell-anemia",
+    "to_page_id": "l-glutamine"
+  },
+  {
+    "from_page_id": "sickle-cell-anemia",
+    "to_page_id": "morphine"
+  },
+  {
+    "from_page_id": "sickle-cell-anemia",
+    "to_page_id": "pyelonephritis"
+  },
+  {
+    "from_page_id": "sickle-cell-anemia",
+    "to_page_id": "voxelotor"
+  },
+  {
+    "from_page_id": "skin-cancers",
+    "to_page_id": "acne-vulgaris"
+  },
+  {
+    "from_page_id": "skin-cancers",
+    "to_page_id": "pressure-ulcers"
+  },
+  {
+    "from_page_id": "skin-cancers",
+    "to_page_id": "psoriasis-papulosquamous-disorder"
+  },
+  {
+    "from_page_id": "sleep-disorders",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "spinal-cord-injury",
+    "to_page_id": "autonomic-hyperreflexia"
+  },
+  {
+    "from_page_id": "spinal-cord-injury",
+    "to_page_id": "dopamine"
+  },
+  {
+    "from_page_id": "spinal-cord-injury",
+    "to_page_id": "vertebral-injuries"
+  },
+  {
+    "from_page_id": "taste-dysfunctions",
+    "to_page_id": "cerebral-edema"
+  },
+  {
+    "from_page_id": "ulcerative-colitis",
+    "to_page_id": "celiac-disease"
+  },
+  {
+    "from_page_id": "ulcerative-colitis",
+    "to_page_id": "crohn-s-disease"
+  },
+  {
+    "from_page_id": "urinary-incontinence",
+    "to_page_id": "spinal-cord-injury"
+  },
+  {
+    "from_page_id": "urinary-incontinence",
+    "to_page_id": "tamsulosin"
+  },
+  {
+    "from_page_id": "urinary-incontinence",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "urinary-tract-infection-uti",
+    "to_page_id": "enuresis"
+  },
+  {
+    "from_page_id": "urinary-tract-infection-uti",
+    "to_page_id": "nephrolithiasis-kidney-stones"
+  },
+  {
+    "from_page_id": "urinary-tract-infection-uti",
+    "to_page_id": "pyelonephritis"
+  },
+  {
+    "from_page_id": "urinary-tract-infection-uti",
+    "to_page_id": "vesicoureteral-reflux-vur"
+  },
+  {
+    "from_page_id": "urinary-tract-obstruction",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "urinary-tract-obstruction",
+    "to_page_id": "morphine"
+  },
+  {
+    "from_page_id": "urinary-tract-obstruction",
+    "to_page_id": "nephrolithiasis-kidney-stones"
+  },
+  {
+    "from_page_id": "urinary-tract-obstruction",
+    "to_page_id": "tamsulosin"
+  },
+  {
+    "from_page_id": "urinary-tract-obstruction",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "vertebral-injuries",
+    "to_page_id": "autonomic-hyperreflexia"
+  },
+  {
+    "from_page_id": "vertebral-injuries",
+    "to_page_id": "degenerative-disorders-of-the-spine"
+  },
+  {
+    "from_page_id": "vertebral-injuries",
+    "to_page_id": "fentanyl"
+  },
+  {
+    "from_page_id": "vertebral-injuries",
+    "to_page_id": "morphine"
+  },
+  {
+    "from_page_id": "vertebral-injuries",
+    "to_page_id": "spinal-cord-injury"
+  },
+  {
+    "from_page_id": "vesicoureteral-reflux-vur",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "vesicoureteral-reflux-vur",
+    "to_page_id": "pyelonephritis"
+  },
+  {
+    "from_page_id": "vesicoureteral-reflux-vur",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "acyclovir",
+    "to_page_id": "meningitis"
+  },
+  {
+    "from_page_id": "albumin",
+    "to_page_id": "cirrhosis"
+  },
+  {
+    "from_page_id": "albumin",
+    "to_page_id": "nephrotic-syndrome"
+  },
+  {
+    "from_page_id": "allopurinol",
+    "to_page_id": "nephrolithiasis-kidney-stones"
+  },
+  {
+    "from_page_id": "amoxicillin",
+    "to_page_id": "meningitis"
+  },
+  {
+    "from_page_id": "amoxicillin",
+    "to_page_id": "pyelonephritis"
+  },
+  {
+    "from_page_id": "amoxicillin",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "azathioprine",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "azathioprine",
+    "to_page_id": "ulcerative-colitis"
+  },
+  {
+    "from_page_id": "benzoyl-peroxide",
+    "to_page_id": "acne-vulgaris"
+  },
+  {
+    "from_page_id": "brentuximab-vedotin",
+    "to_page_id": "non-hodgkin-lymphoma"
+  },
+  {
+    "from_page_id": "ciprofloxacin",
+    "to_page_id": "pyelonephritis"
+  },
+  {
+    "from_page_id": "ciprofloxacin",
+    "to_page_id": "urinary-tract-infection-uti"
+  },
+  {
+    "from_page_id": "cyclophosphamide",
+    "to_page_id": "multiple-myeloma"
+  },
+  {
+    "from_page_id": "cyclophosphamide",
+    "to_page_id": "nephroblastoma-wilms-tumor"
+  },
+  {
+    "from_page_id": "cyclophosphamide",
+    "to_page_id": "non-hodgkin-lymphoma"
+  },
+  {
+    "from_page_id": "desmopressin",
+    "to_page_id": "enuresis"
+  },
+  {
+    "from_page_id": "desmopressin",
+    "to_page_id": "hemophilia-a-and-b"
+  },
+  {
+    "from_page_id": "dexamethasone",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "dexamethasone",
+    "to_page_id": "meningitis"
+  },
+  {
+    "from_page_id": "dexamethasone",
+    "to_page_id": "multiple-myeloma"
+  },
+  {
+    "from_page_id": "donepezil",
+    "to_page_id": "dementia"
+  },
+  {
+    "from_page_id": "dopamine",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "doxorubicin",
+    "to_page_id": "multiple-myeloma"
+  },
+  {
+    "from_page_id": "doxorubicin",
+    "to_page_id": "nephroblastoma-wilms-tumor"
+  },
+  {
+    "from_page_id": "doxorubicin",
+    "to_page_id": "non-hodgkin-lymphoma"
+  },
+  {
+    "from_page_id": "furosemide",
+    "to_page_id": "acute-kidney-injury-aki"
+  },
+  {
+    "from_page_id": "furosemide",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "furosemide",
+    "to_page_id": "cirrhosis"
+  },
+  {
+    "from_page_id": "heparin",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  },
+  {
+    "from_page_id": "hydroxyurea",
+    "to_page_id": "multiple-myeloma"
+  },
+  {
+    "from_page_id": "hydroxyurea",
+    "to_page_id": "sickle-cell-anemia"
+  },
+  {
+    "from_page_id": "insulin",
+    "to_page_id": "diabetes-mellitus"
+  },
+  {
+    "from_page_id": "isotretinoin",
+    "to_page_id": "acne-vulgaris"
+  },
+  {
+    "from_page_id": "l-glutamine",
+    "to_page_id": "sickle-cell-anemia"
+  },
+  {
+    "from_page_id": "lactulose",
+    "to_page_id": "cirrhosis"
+  },
+  {
+    "from_page_id": "metformin",
+    "to_page_id": "diabetes-mellitus"
+  },
+  {
+    "from_page_id": "metronidazole",
+    "to_page_id": "cholelithiasis-and-cholecystitis"
+  },
+  {
+    "from_page_id": "metronidazole",
+    "to_page_id": "ulcerative-colitis"
+  },
+  {
+    "from_page_id": "pantoprazole",
+    "to_page_id": "cirrhosis"
+  },
+  {
+    "from_page_id": "pantoprazole",
+    "to_page_id": "peptic-ulcer-disease"
+  },
+  {
+    "from_page_id": "prednisone",
+    "to_page_id": "glomerulonephritis"
+  },
+  {
+    "from_page_id": "prednisone",
+    "to_page_id": "meningitis"
+  },
+  {
+    "from_page_id": "prednisone",
+    "to_page_id": "multiple-myeloma"
+  },
+  {
+    "from_page_id": "prednisone",
+    "to_page_id": "multiple-sclerosis-ms"
+  },
+  {
+    "from_page_id": "prednisone",
+    "to_page_id": "nephrotic-syndrome"
+  },
+  {
+    "from_page_id": "prednisone",
+    "to_page_id": "non-hodgkin-lymphoma"
+  },
+  {
+    "from_page_id": "prednisone",
+    "to_page_id": "ulcerative-colitis"
+  },
+  {
+    "from_page_id": "ranitidine",
+    "to_page_id": "peptic-ulcer-disease"
+  },
+  {
+    "from_page_id": "rituximab",
+    "to_page_id": "multiple-myeloma"
+  },
+  {
+    "from_page_id": "rituximab",
+    "to_page_id": "nephrotic-syndrome"
+  },
+  {
+    "from_page_id": "rituximab",
+    "to_page_id": "non-hodgkin-lymphoma"
+  },
+  {
+    "from_page_id": "spironolactone",
+    "to_page_id": "acne-vulgaris"
+  },
+  {
+    "from_page_id": "spironolactone",
+    "to_page_id": "chronic-kidney-disease-ckd"
+  },
+  {
+    "from_page_id": "spironolactone",
+    "to_page_id": "cirrhosis"
+  },
+  {
+    "from_page_id": "vincristine",
+    "to_page_id": "multiple-myeloma"
+  },
+  {
+    "from_page_id": "vincristine",
+    "to_page_id": "non-hodgkin-lymphoma"
+  },
+  {
+    "from_page_id": "voxelotor",
+    "to_page_id": "sickle-cell-anemia"
+  },
+  {
+    "from_page_id": "warfarin",
+    "to_page_id": "cerebrovascular-disease-stroke"
+  }
+]

@@ -16,8 +16,8 @@ Use this as the first map for pharmacology coverage. Start with medications that
 
 ## Anticoagulants And Antiplatelets
 
-- [ ] Heparin
-- [ ] Warfarin
+- [x] Heparin
+- [x] Warfarin
 - [ ] Enoxaparin
 - [ ] Apixaban
 - [ ] Clopidogrel
@@ -25,10 +25,10 @@ Use this as the first map for pharmacology coverage. Start with medications that
 
 ## Endocrine
 
-- [ ] Insulin rapid acting
-- [ ] Insulin long acting
-- [ ] Metformin
-- [ ] Sulfonylureas
+- [x] Insulin rapid acting
+- [x] Insulin long acting
+- [x] Metformin
+- [x] Sulfonylureas
 - [ ] Levothyroxine
 - [ ] Corticosteroids
 
@@ -52,7 +52,7 @@ Use this as the first map for pharmacology coverage. Start with medications that
 
 ## Pain And Inflammation
 
-- [ ] Acetaminophen
+- [x] Acetaminophen
 - [ ] NSAIDs
 - [ ] Opioids
 - [ ] Naloxone
@@ -72,4 +72,3 @@ Use this as the first map for pharmacology coverage. Start with medications that
 - [ ] Benzodiazepines
 - [ ] Antipsychotics
 - [ ] Anticonvulsants
-

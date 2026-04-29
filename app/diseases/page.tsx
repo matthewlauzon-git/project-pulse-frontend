@@ -1,108 +1,109 @@
 'use client'
-import { useEffect, useState, Suspense } from 'react'
+
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { getDiseases, type DiseaseListItem } from '@/lib/supabase'
+import { DISEASE_SYSTEM_ORDER, inferDiseaseSystem } from '@/lib/classification'
 
-const SYS_MAP: Record<string, string[]> = {
-  Gastrointestinal: ['gastrointestinal', 'gi'],
-  Hematologic: ['hematologic', 'blood', 'coagulation'],
-  Neurological: ['neurological'],
-  Renal: ['renal'],
-  Endocrine: ['endocrine'],
-  Cardiovascular: ['cardiovascular'],
-  Dermatological: ['dermatological', 'integumentary'],
-  Immunology: ['immunology', 'immunological', 'immune'],
-  Oncology: ['oncology', 'cancer', 'carcinoma'],
-  Infectious: ['infectious', 'infection', 'sepsis'],
-  Respiratory: ['respiratory', 'pulmonary'],
-}
-
-const SYS_EMOJI: Record<string, string> = {
-  Gastrointestinal: '🫁', Hematologic: '🩸', Neurological: '🧠', Renal: '🫘',
-  Endocrine: '🦋', Cardiovascular: '❤️', Dermatological: '🩹', Immunology: '🛡️',
-  Oncology: '🎗️', Infectious: '🦠', Respiratory: '🫁', Other: '📁',
-}
-
-function inferSystem(tags: string[]): string {
-  if (!tags?.length) return 'Other'
-  const ts = new Set(tags.map(t => t.toLowerCase()))
-  for (const [sys, kws] of Object.entries(SYS_MAP))
-    if (kws.some(k => ts.has(k))) return sys
-  return 'Other'
+const SYSTEM_META: Record<string, { icon: string; blurb: string }> = {
+  Cardiac: { icon: '♥', blurb: 'Perfusion, rhythm, pressure, and pump problems.' },
+  Respiratory: { icon: '↟', blurb: 'Oxygenation, ventilation, airway, and gas exchange.' },
+  Neurological: { icon: '✦', blurb: 'Brain, spine, nerves, safety, and assessment cues.' },
+  Endocrine: { icon: '◐', blurb: 'Hormones, glucose, metabolism, and regulation.' },
+  'Renal and Urinary': { icon: '◇', blurb: 'Kidney function, fluids, electrolytes, and UTIs.' },
+  Gastrointestinal: { icon: '◎', blurb: 'Digestion, liver, pancreas, nutrition, and elimination.' },
+  Hematologic: { icon: '◆', blurb: 'Blood cells, clotting, bleeding, and oncology overlap.' },
+  'Infectious and Immune': { icon: '✚', blurb: 'Inflammation, infection, immunity, and escalation.' },
+  Integumentary: { icon: '▧', blurb: 'Skin integrity, wounds, lesions, and teaching.' },
+  Sensory: { icon: '◉', blurb: 'Eyes, ears, smell, taste, and safety adaptations.' },
+  Other: { icon: '□', blurb: 'Mixed concepts that still need a cleaner home.' },
 }
 
 function DiseasesPageInner() {
   const [diseases, setDiseases] = useState<DiseaseListItem[]>([])
-  const [filter, setFilter] = useState('')
+  const [loaded, setLoaded] = useState(false)
   const searchParams = useSearchParams()
   const systemFilter = searchParams.get('system') || ''
 
-  useEffect(() => { getDiseases().then(setDiseases) }, [])
-
-  const filtered = filter
-    ? diseases.filter(d =>
-        d.title.toLowerCase().includes(filter.toLowerCase()) ||
-        d.tags?.some((t: string) => t.toLowerCase().includes(filter.toLowerCase())) ||
-        d.incidence?.toLowerCase().includes(filter.toLowerCase())
-      )
-    : diseases
+  useEffect(() => {
+    getDiseases().then(items => {
+      setDiseases(items)
+      setLoaded(true)
+    })
+  }, [])
 
   const groups: Record<string, DiseaseListItem[]> = {}
-  filtered.forEach(d => {
-    const sys = inferSystem(d.tags)
-    if (!groups[sys]) groups[sys] = []
-    groups[sys].push(d)
+  diseases.forEach(disease => {
+    const system = inferDiseaseSystem(disease)
+    groups[system] = groups[system] || []
+    groups[system].push(disease)
   })
-  const order = [...Object.keys(SYS_MAP), 'Other'].filter(s => groups[s])
-  const visibleGroups = systemFilter ? order.filter(s => s === systemFilter) : order
 
-  return (
-    <>
-      <div className="search-wrap">
-        <span className="si">🔍</span>
-        <input
-          type="text"
-          placeholder="Filter by name, tag, or incidence…"
-          value={filter}
-          onChange={e => setFilter(e.target.value)}
-        />
-      </div>
-      {systemFilter && (
-        <div style={{ marginBottom: 16 }}>
-          <Link href="/diseases" className="back-btn">← All systems</Link>
-          <span style={{ marginLeft: 12, fontWeight: 600 }}>{SYS_EMOJI[systemFilter] ?? '📁'} {systemFilter}</span>
-        </div>
-      )}
-      {visibleGroups.map(sys => (
-        <div key={sys}>
-          <div className="system-label">
-            <span className="sys-emoji">{SYS_EMOJI[sys] ?? '📁'}</span> {sys} <span className="sys-count">{groups[sys].length}</span>
+  const systemCards = DISEASE_SYSTEM_ORDER.map(system => ({
+    system,
+    count: groups[system]?.length || 0,
+    meta: SYSTEM_META[system] || SYSTEM_META.Other,
+  }))
+  const selectedCards = systemFilter ? groups[systemFilter] || [] : []
+
+  if (systemFilter) {
+    const meta = SYSTEM_META[systemFilter] || SYSTEM_META.Other
+    return (
+      <>
+        <div className="disease-system-detail-header">
+          <Link href="/diseases" className="back-btn">All systems</Link>
+          <span>{meta.icon}</span>
+          <div>
+            <h2>{systemFilter}</h2>
+            <p>{loaded ? `${selectedCards.length} disease cards` : 'Loading cards'}</p>
           </div>
+        </div>
+
+        {loaded && (
           <div className="card-grid">
-            {groups[sys].map(d => (
-              <Link key={d.slug} href={`/diseases/${d.slug}`} className="card disease">
+            {selectedCards.map(disease => (
+              <Link key={disease.slug} href={`/diseases/${disease.slug}`} className="card disease">
                 <div className="type">Disease</div>
-                <h3>{d.title}</h3>
-                {d.incidence && <p className="meta">{d.incidence}</p>}
+                <h3>{disease.title}</h3>
+                {disease.incidence && <p className="meta">{disease.incidence}</p>}
               </Link>
             ))}
           </div>
-        </div>
-      ))}
-      {filtered.length === 0 && <div className="empty-state">No diseases found</div>}
+        )}
+
+        {loaded && selectedCards.length === 0 && <div className="empty-state">No cards in this system yet.</div>}
+      </>
+    )
+  }
+
+  return (
+    <>
+      <section className="disease-system-grid" aria-label="Disease systems">
+        {systemCards.map(({ system, count, meta }) => (
+          <Link href={`/diseases?system=${encodeURIComponent(system)}`} key={system} className="disease-system-card">
+            <span className="disease-system-icon">{meta.icon}</span>
+            <div>
+              <h2>{system}</h2>
+              <p>{meta.blurb}</p>
+            </div>
+            <strong>{loaded ? `${count} cards` : 'Loading'}</strong>
+          </Link>
+        ))}
+      </section>
     </>
   )
 }
 
 export default function DiseasesPage() {
   return (
-    <main className="page-wrap">
-      <div className="page-header">
-        <h1>Diseases</h1>
-        <p>Pathophysiology & Med-Surg flash cards</p>
+    <main className="page-wrap disease-systems-page">
+      <div className="page-header disease-page-header">
+        <p className="eyebrow">Diseases</p>
+        <h1>Browse By Body System</h1>
+        <p>Pick a system first. Search stays global when you already know the disease name.</p>
       </div>
-      <Suspense fallback={<div className="loading">Loading…</div>}>
+      <Suspense fallback={<div className="loading">Loading systems...</div>}>
         <DiseasesPageInner />
       </Suspense>
     </main>

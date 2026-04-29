@@ -2,31 +2,11 @@
 import { useEffect, useState, use } from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
-import { getNote } from '@/lib/supabase'
+import { getNote, getSlugTypeMap, renderWikilinks } from '@/lib/supabase'
 import type { Note } from '@/lib/supabase'
 
 function renderHashtags(content: string): string {
   return content.replace(/(^|\s)#([A-Za-z0-9_-]+)/g, (_, space, tag) => `${space}\`#${tag}\``)
-}
-
-const DRUG_SLUGS = new Set([
-  'prednisone','metformin','insulin','furosemide','spironolactone','warfarin','heparin',
-  'albumin','acetaminophen','acyclovir','allopurinol','amoxicillin','azathioprine',
-  'benzoyl-peroxide','brentuximab-vedotin','ciprofloxacin','cyclophosphamide',
-  'desmopressin','dexamethasone','dopamine','doxorubicin','fentanyl','hydroxyurea',
-  'isotretinoin','l-glutamine','lactulose','metronidazole','morphine','ondansetron',
-  'pantoprazole','ranitidine','rituximab','vincristine','voxelotor','azithromycin',
-  'clarithromycin','omeprazole','metoclopramide','loperamide','gabapentin','pregabalin',
-  'duloxetine','hydromorphone','naloxone','buprenorphine','methadone',
-  'sulfamethoxazole-trimethoprim',
-])
-
-function renderWikilinks(content: string): string {
-  return content.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, slug, label) => {
-    const clean = slug.trim()
-    const prefix = DRUG_SLUGS.has(clean) ? '/drugs' : '/diseases'
-    return `[${label}](${prefix}/${clean})`
-  })
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,24 +21,29 @@ const COMPONENTS = { a: WIKILINK }
 export default function NotePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
   const [note, setNote] = useState<Note | null>(null)
+  const [slugMap, setSlugMap] = useState<Record<string, 'disease' | 'drug' | 'note'>>({})
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getNote(slug).then(n => { setNote(n); setLoading(false) })
+    Promise.all([getNote(slug), getSlugTypeMap()])
+      .then(([n, map]) => { setNote(n); setSlugMap(map); setLoading(false) })
   }, [slug])
 
   if (loading) return <main className="page-wrap"><div className="loading">Loading…</div></main>
   if (!note) return <main className="page-wrap"><div className="empty-state">Note not found</div></main>
 
   let content = note.content || ''
-  content = renderWikilinks(content)
+  content = renderWikilinks(content, slugMap)
   content = renderHashtags(content)
 
   return (
     <main className="page-wrap">
       <div className="detail-header">
         <Link href="/notes" className="back-btn">← Back to notes</Link>
-        <span className="type-badge note">{note.content_type || 'Note'}</span>
+        <div className="detail-actions">
+          <Link href={`/pages/${note.slug}/edit`} className="back-btn">Edit</Link>
+          <span className="type-badge note">{note.content_type || 'Note'}</span>
+        </div>
       </div>
       <h1 className="detail-title">{note.title}</h1>
       <div className="detail-meta">

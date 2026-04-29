@@ -1,6 +1,8 @@
 # Drug Card Template
 
-Use this exact structure for drug cards. Keep nursing monitoring and safety information easy to scan.
+Use this exact structure for drug cards. Keep every line focused on student clinical judgment:
+what to check, what can harm the patient, what to monitor, what to teach, and what students mix up.
+Do not write prescribing guidance, dosing instructions, or facility-independent administration orders.
 
 ---
 type: drug
@@ -12,43 +14,48 @@ tags: []
 
 # {{Drug Name}}
 
-## Clinical Core
+## Student Snapshot
 
-### Generic Name
+### Need To Know
 
-### Brand Names
+-
+-
+-
 
-### Class
+### Before Giving
 
-### Mechanism
+-
+-
+-
 
-### Indications
+### Hold / Reassess
 
-### Contraindications
+-
+-
+-
 
-## Nursing Focus
+### Monitor
 
-### Before Administration
+-
+-
+-
 
-### Monitoring
+### Teach
 
-### Side Effects
+-
+-
+-
 
-### Adverse Effects
+### Danger
 
-### Patient Teaching
+-
+-
 
-### Safety Alerts
+### NCLEX Traps
 
-## Learning Layer
-
-### Exam Clues
-
-### Common Confusions
-
-### Must Remember
+-
+-
 
 ## Related
 
 - [[ ]]
-

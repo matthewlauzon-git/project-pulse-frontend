@@ -3,34 +3,25 @@ import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { getDrugs, type DrugListItem } from '@/lib/supabase'
+import { DRUG_CLASS_ORDER, inferDrugClass } from '@/lib/classification'
 
-const CLASS_EMOJI: Record<string, string> = {
-  'Antibiotics / Antimicrobials': '🦠', 'Analgesics': '💊', 'Cardiovascular': '❤️',
-  'Antidiabetics': '🩸', 'Respiratory': '🫁', 'Psychiatric / Neurological': '🧠',
-  'Gastrointestinal': '🫁', 'Anticoagulants / Blood': '🩸', 'Immunologics / Steroids': '🛡️',
-  'Endocrine / Hormones': '🦋', 'Oncology': '🎗️', 'Dermatological': '🩹',
-  'Renal': '🫘', 'Anesthetics': '💉', 'Other': '📁',
-}
-
-function classifyDrug(drug: DrugListItem): string {
-  const c = (drug.classification || '').toLowerCase()
-  const t = (drug.tags || []).map(x => x.toLowerCase())
-  const all = [c, ...t].join(' ')
-  if (/antibiot|macrolide|penicill|cephalospor|fluoroquinol|tetracycl|aminoglycos|sulfon|nitroimidaz/.test(all)) return 'Antibiotics / Antimicrobials'
-  if (/analges|nsaid|opioid|pain|acetaminoph|morphine|fentanyl/.test(all)) return 'Analgesics'
-  if (/cardio|antihypertens|ace inhibi|beta.?block|calcium channel|diuretic|vasodilat|digoxin|antiangin/.test(all)) return 'Cardiovascular'
-  if (/antidiabet|insulin|metform|sulfonyl|glp.?1|sglt/.test(all)) return 'Antidiabetics'
-  if (/respirat|bronchodil|corticost|inhaler|albuterol|asthma|copd/.test(all)) return 'Respiratory'
-  if (/antidepress|ssri|snri|anxiolyt|benzodiaz|antipsych|sedative|psych/.test(all)) return 'Psychiatric / Neurological'
-  if (/gastroint|ppi|proton pump|antacid|laxative|antiemet|ondansetron/.test(all)) return 'Gastrointestinal'
-  if (/anticoag|heparin|warfarin|thromboly|antiplatelet/.test(all)) return 'Anticoagulants / Blood'
-  if (/immunosuppr|corticost|steroid|prednis/.test(all)) return 'Immunologics / Steroids'
-  if (/hormone|thyroid|levothyrox|cortisol/.test(all)) return 'Endocrine / Hormones'
-  if (/oncolog|chemother/.test(all)) return 'Oncology'
-  if (/topical|dermatol|skin/.test(all)) return 'Dermatological'
-  if (/renal|diuret/.test(all)) return 'Renal'
-  if (/anesthes|local anesth|general anesth/.test(all)) return 'Anesthetics'
-  return 'Other'
+const CLASS_ICON: Record<string, string> = {
+  'Beta Blockers': 'BB',
+  'ACE Inhibitors / ARBs': 'ACE',
+  'Loop Diuretics': 'LD',
+  'Potassium-Sparing Diuretics': 'K',
+  Anticoagulants: 'AC',
+  Insulins: 'IN',
+  'Oral Antidiabetics': 'DM',
+  Corticosteroids: 'CS',
+  'Antibiotics / Antimicrobials': 'AB',
+  Antivirals: 'AV',
+  'Opioid Analgesics': 'OP',
+  'Non-Opioid Analgesics': 'PA',
+  Gastrointestinal: 'GI',
+  'Oncology / Biologics': 'ON',
+  Integumentary: 'I',
+  Other: 'O',
 }
 
 function DrugsPageInner() {
@@ -51,11 +42,11 @@ function DrugsPageInner() {
 
   const groups: Record<string, DrugListItem[]> = {}
   filtered.forEach(d => {
-    const cls = classifyDrug(d)
+    const cls = inferDrugClass(d)
     if (!groups[cls]) groups[cls] = []
     groups[cls].push(d)
   })
-  const order = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length)
+  const order = DRUG_CLASS_ORDER.filter(cls => groups[cls])
   const visibleGroups = classFilter ? order.filter(cls => cls === classFilter) : order
 
   return (
@@ -69,16 +60,27 @@ function DrugsPageInner() {
           onChange={e => setFilter(e.target.value)}
         />
       </div>
+      <div className="quick-filter-row">
+        {DRUG_CLASS_ORDER.map(drugClass => (
+          <Link
+            key={drugClass}
+            href={`/drugs?class=${encodeURIComponent(drugClass)}`}
+            className={classFilter === drugClass ? 'active' : ''}
+          >
+            {drugClass}
+          </Link>
+        ))}
+      </div>
       {classFilter && (
         <div style={{ marginBottom: 16 }}>
           <Link href="/drugs" className="back-btn">← All classes</Link>
-          <span style={{ marginLeft: 12, fontWeight: 600 }}>{CLASS_EMOJI[classFilter] ?? '📁'} {classFilter}</span>
+          <span style={{ marginLeft: 12, fontWeight: 600 }}>{CLASS_ICON[classFilter] ?? 'O'} {classFilter}</span>
         </div>
       )}
       {visibleGroups.map(cls => (
         <div key={cls}>
           <div className="system-label">
-            <span className="sys-emoji">{CLASS_EMOJI[cls] ?? '📁'}</span> {cls} <span className="sys-count">{groups[cls].length}</span>
+            <span className="sys-emoji">{CLASS_ICON[cls] ?? 'O'}</span> {cls} <span className="sys-count">{groups[cls].length}</span>
           </div>
           <div className="card-grid">
             {groups[cls].map(d => (
@@ -92,6 +94,7 @@ function DrugsPageInner() {
         </div>
       ))}
       {filtered.length === 0 && <div className="empty-state">No drugs found</div>}
+      {filtered.length > 0 && visibleGroups.length === 0 && <div className="empty-state">No cards in this class yet.</div>}
     </>
   )
 }

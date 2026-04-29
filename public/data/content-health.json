@@ -1,0 +1,2374 @@
+{
+  "generatedAt": "2026-04-27T16:27:08.633Z",
+  "counts": {
+    "diseases": 73,
+    "drugs": 39,
+    "total": 112,
+    "brokenLinkTargets": 183
+  },
+  "statusCounts": {
+    "student_ready": 25,
+    "needs_review": 45,
+    "repair_first": 42
+  },
+  "topIssues": [
+    {
+      "title": "Urinary Incontinence",
+      "type": "disease",
+      "path": "content/processed/diseases/urinary-incontinence.md",
+      "qualityScore": 52,
+      "missingHeadings": [],
+      "brokenLinks": [
+        "benign-prostatic-hyperplasia",
+        "bethanechol",
+        "botulinum-toxin",
+        "duloxetine",
+        "estrogen-topical",
+        "finasteride",
+        "menopause",
+        "mirabegron",
+        "neurogenic-bladder",
+        "oxybutynin",
+        "solifenacin",
+        "tolterodine"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Demyelinating Disorders",
+      "type": "disease",
+      "path": "content/processed/diseases/demyelinating-disorders.md",
+      "qualityScore": 60,
+      "missingHeadings": [],
+      "brokenLinks": [
+        "dimethyl-fumarate",
+        "eculizumab",
+        "fingolimod",
+        "glatiramer-acetate",
+        "interferon-beta",
+        "methylprednisolone",
+        "natalizumab",
+        "ocrelizumab",
+        "optic-neuritis",
+        "transverse-myelitis"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Metronidazole",
+      "type": "drug",
+      "path": "content/processed/drugs/metronidazole.md",
+      "qualityScore": 60,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [
+        "crohns-disease",
+        "diverticular-disease"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Renal Tumours",
+      "type": "disease",
+      "path": "content/processed/diseases/renal-tumours.md",
+      "qualityScore": 60,
+      "missingHeadings": [],
+      "brokenLinks": [
+        "bladder-cancer",
+        "cisplatin",
+        "dactinomycin",
+        "everolimus",
+        "gemcitabine",
+        "nivolumab",
+        "pazopanib",
+        "renal-cell-carcinoma",
+        "sunitinib",
+        "von-hippel-lindau"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Azathioprine",
+      "type": "drug",
+      "path": "content/processed/drugs/azathioprine.md",
+      "qualityScore": 64,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [
+        "crohns-disease"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Donepezil",
+      "type": "drug",
+      "path": "content/processed/drugs/donepezil.md",
+      "qualityScore": 64,
+      "missingHeadings": [
+        "Study Snapshot",
+        "What It Is",
+        "Monitor For",
+        "Major Safety Flags"
+      ],
+      "brokenLinks": [
+        "alzheimers-disease"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Headaches",
+      "type": "disease",
+      "path": "content/processed/diseases/headaches.md",
+      "qualityScore": 64,
+      "missingHeadings": [],
+      "brokenLinks": [
+        "amitriptyline",
+        "erenumab",
+        "ibuprofen",
+        "ondansetron",
+        "propranolol",
+        "sumatriptan",
+        "temporal-arteritis",
+        "topiramate",
+        "verapamil"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Heparin",
+      "type": "drug",
+      "path": "content/processed/drugs/heparin.md",
+      "qualityScore": 64,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [
+        "dic-disseminated-intravascular-coagulation"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Pantoprazole",
+      "type": "drug",
+      "path": "content/processed/drugs/pantoprazole.md",
+      "qualityScore": 64,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [
+        "gerd"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Ranitidine",
+      "type": "drug",
+      "path": "content/processed/drugs/ranitidine.md",
+      "qualityScore": 64,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [
+        "gerd"
+      ],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Acetaminophen",
+      "type": "drug",
+      "path": "content/processed/drugs/acetaminophen.md",
+      "qualityScore": 68,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Acyclovir",
+      "type": "drug",
+      "path": "content/processed/drugs/acyclovir.md",
+      "qualityScore": 68,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Allopurinol",
+      "type": "drug",
+      "path": "content/processed/drugs/allopurinol.md",
+      "qualityScore": 68,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Amoxicillin",
+      "type": "drug",
+      "path": "content/processed/drugs/amoxicillin.md",
+      "qualityScore": 68,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    },
+    {
+      "title": "Benzoyl Peroxide",
+      "type": "drug",
+      "path": "content/processed/drugs/benzoyl-peroxide.md",
+      "qualityScore": 68,
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "brokenLinks": [],
+      "placeholderLinks": 0,
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0
+    }
+  ],
+  "cards": [
+    {
+      "slug": "acne-vulgaris",
+      "title": "Acne Vulgaris",
+      "type": "disease",
+      "path": "content/processed/diseases/acne-vulgaris.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 295,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "acute-confusional-states",
+      "title": "Acute Confusional States",
+      "type": "disease",
+      "path": "content/processed/diseases/acute-confusional-states.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 571,
+      "brokenLinks": [
+        "haloperidol",
+        "quetiapine"
+      ],
+      "qualityScore": 92,
+      "status": "student_ready"
+    },
+    {
+      "slug": "acute-kidney-injury-aki",
+      "title": "Acute Kidney Injury (AKI)",
+      "type": "disease",
+      "path": "content/processed/diseases/acute-kidney-injury-aki.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 297,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "alzheimer-s-disease",
+      "title": "Alzheimer's Disease",
+      "type": "disease",
+      "path": "content/processed/diseases/alzheimer-s-disease.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 266,
+      "brokenLinks": [
+        "parkinsons-disease"
+      ],
+      "qualityScore": 96,
+      "status": "student_ready"
+    },
+    {
+      "slug": "amyotrophic-lateral-sclerosis-als",
+      "title": "Amyotrophic Lateral Sclerosis (ALS)",
+      "type": "disease",
+      "path": "content/processed/diseases/amyotrophic-lateral-sclerosis-als.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 254,
+      "brokenLinks": [
+        "parkinsons-disease"
+      ],
+      "qualityScore": 96,
+      "status": "student_ready"
+    },
+    {
+      "slug": "appendicitis",
+      "title": "Appendicitis",
+      "type": "disease",
+      "path": "content/processed/diseases/appendicitis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 275,
+      "brokenLinks": [
+        "crohns-disease",
+        "diverticular-disease",
+        "gastroenteritis",
+        "mesenteric-ischemia",
+        "ovarian-torsion"
+      ],
+      "qualityScore": 80,
+      "status": "needs_review"
+    },
+    {
+      "slug": "atopic-dermatitis-eczema",
+      "title": "Atopic Dermatitis (Eczema)",
+      "type": "disease",
+      "path": "content/processed/diseases/atopic-dermatitis-eczema.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 280,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "autonomic-hyperreflexia",
+      "title": "Autonomic Hyperreflexia",
+      "type": "disease",
+      "path": "content/processed/diseases/autonomic-hyperreflexia.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 727,
+      "brokenLinks": [
+        "neurogenic-bladder",
+        "nifedipine",
+        "nitroglycerin"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "brain-trauma",
+      "title": "Brain Trauma",
+      "type": "disease",
+      "path": "content/processed/diseases/brain-trauma.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 596,
+      "brokenLinks": [
+        "levetiracetam",
+        "mannitol"
+      ],
+      "qualityScore": 92,
+      "status": "student_ready"
+    },
+    {
+      "slug": "celiac-disease",
+      "title": "Celiac Disease",
+      "type": "disease",
+      "path": "content/processed/diseases/celiac-disease.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 416,
+      "brokenLinks": [
+        "crohns-disease"
+      ],
+      "qualityScore": 96,
+      "status": "student_ready"
+    },
+    {
+      "slug": "cerebral-edema",
+      "title": "Cerebral Edema",
+      "type": "disease",
+      "path": "content/processed/diseases/cerebral-edema.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 575,
+      "brokenLinks": [
+        "mannitol"
+      ],
+      "qualityScore": 96,
+      "status": "student_ready"
+    },
+    {
+      "slug": "cerebrovascular-disease-stroke",
+      "title": "Cerebrovascular Disease (Stroke)",
+      "type": "disease",
+      "path": "content/processed/diseases/cerebrovascular-disease-stroke.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 275,
+      "brokenLinks": [
+        "alzheimers-disease"
+      ],
+      "qualityScore": 96,
+      "status": "student_ready"
+    },
+    {
+      "slug": "cholelithiasis-and-cholecystitis",
+      "title": "Cholelithiasis and Cholecystitis",
+      "type": "disease",
+      "path": "content/processed/diseases/cholelithiasis-and-cholecystitis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 312,
+      "brokenLinks": [
+        "acute-pyelonephritis",
+        "cholecystitis",
+        "cholelithiasis"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "chronic-kidney-disease-ckd",
+      "title": "Chronic Kidney Disease (CKD)",
+      "type": "disease",
+      "path": "content/processed/diseases/chronic-kidney-disease-ckd.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 278,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "cirrhosis",
+      "title": "Cirrhosis",
+      "type": "disease",
+      "path": "content/processed/diseases/cirrhosis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 381,
+      "brokenLinks": [
+        "alcohol-use-disorder",
+        "gerd",
+        "hepatic-encephalopathy",
+        "nafld",
+        "portal-hypertension"
+      ],
+      "qualityScore": 80,
+      "status": "needs_review"
+    },
+    {
+      "slug": "cns-infections",
+      "title": "CNS Infections",
+      "type": "disease",
+      "path": "content/processed/diseases/cns-infections.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 601,
+      "brokenLinks": [
+        "amphotericin-b",
+        "ampicillin",
+        "ceftriaxone",
+        "fluconazole",
+        "flucytosine",
+        "isoniazid",
+        "rifampin",
+        "vancomycin"
+      ],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "cns-tumors",
+      "title": "CNS Tumors",
+      "type": "disease",
+      "path": "content/processed/diseases/cns-tumors.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 552,
+      "brokenLinks": [
+        "bevacizumab",
+        "breast-cancer",
+        "carmustine",
+        "levetiracetam",
+        "lung-cancer",
+        "phenytoin",
+        "pituitary-adenoma",
+        "temozolomide"
+      ],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "concussion",
+      "title": "Concussion",
+      "type": "disease",
+      "path": "content/processed/diseases/concussion.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 670,
+      "brokenLinks": [
+        "amitriptyline",
+        "ondansetron",
+        "post-concussion-syndrome"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "crohn-s-disease",
+      "title": "Crohn’s Disease",
+      "type": "disease",
+      "path": "content/processed/diseases/crohn-s-disease.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 416,
+      "brokenLinks": [
+        "crohns-disease",
+        "infectious-colitis",
+        "irritable-bowel-syndrome-ibs"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "degenerative-disorders-of-the-spine",
+      "title": "Degenerative Disorders of the Spine",
+      "type": "disease",
+      "path": "content/processed/diseases/degenerative-disorders-of-the-spine.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 558,
+      "brokenLinks": [
+        "cyclobenzaprine",
+        "degenerative-disk-disease",
+        "gabapentin",
+        "herniated-disc",
+        "naproxen",
+        "osteoarthritis",
+        "pregabalin",
+        "triamcinolone"
+      ],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "dementia",
+      "title": "Dementia",
+      "type": "disease",
+      "path": "content/processed/diseases/dementia.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 264,
+      "brokenLinks": [
+        "alzheimers-disease",
+        "huntingtons-disease",
+        "parkinsons-disease"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "demyelinating-disorders",
+      "title": "Demyelinating Disorders",
+      "type": "disease",
+      "path": "content/processed/diseases/demyelinating-disorders.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 426,
+      "brokenLinks": [
+        "dimethyl-fumarate",
+        "eculizumab",
+        "fingolimod",
+        "glatiramer-acetate",
+        "interferon-beta",
+        "methylprednisolone",
+        "natalizumab",
+        "ocrelizumab",
+        "optic-neuritis",
+        "transverse-myelitis"
+      ],
+      "qualityScore": 60,
+      "status": "repair_first"
+    },
+    {
+      "slug": "diabetes-mellitus",
+      "title": "Diabetes Mellitus",
+      "type": "disease",
+      "path": "content/processed/diseases/diabetes-mellitus.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 280,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "disseminated-intravascular-coagulation-dic",
+      "title": "Disseminated Intravascular Coagulation (DIC)",
+      "type": "disease",
+      "path": "content/processed/diseases/disseminated-intravascular-coagulation-dic.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 711,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "diverticular-disease-diverticulosis-and-diverticulitis",
+      "title": "Diverticular Disease (Diverticulosis & Diverticulitis)",
+      "type": "disease",
+      "path": "content/processed/diseases/diverticular-disease-diverticulosis-and-diverticulitis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 369,
+      "brokenLinks": [
+        "crohns-disease",
+        "irritable-bowel-syndrome-ibs"
+      ],
+      "qualityScore": 92,
+      "status": "student_ready"
+    },
+    {
+      "slug": "ear-disorders",
+      "title": "Ear Disorders",
+      "type": "disease",
+      "path": "content/processed/diseases/ear-disorders.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 551,
+      "brokenLinks": [
+        "clonazepam",
+        "hydrochlorothiazide",
+        "meclizine",
+        "valacyclovir"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "encephalopathies",
+      "title": "Encephalopathies",
+      "type": "disease",
+      "path": "content/processed/diseases/encephalopathies.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 605,
+      "brokenLinks": [
+        "hemodialysis",
+        "hepatic-encephalopathy",
+        "hepatic-failure",
+        "levetiracetam",
+        "lola",
+        "rifaximin",
+        "thiamine",
+        "wernicke-encephalopathy"
+      ],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "enuresis",
+      "title": "Enuresis",
+      "type": "disease",
+      "path": "content/processed/diseases/enuresis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 274,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "eye-disorders",
+      "title": "Eye Disorders",
+      "type": "disease",
+      "path": "content/processed/diseases/eye-disorders.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 533,
+      "brokenLinks": [
+        "acetazolamide",
+        "brimonidine",
+        "diabetic-ketoacidosis",
+        "dorzolamide",
+        "latanoprost",
+        "mannitol",
+        "pilocarpine",
+        "timolol"
+      ],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "frontotemporal-dementia",
+      "title": "Frontotemporal Dementia",
+      "type": "disease",
+      "path": "content/processed/diseases/frontotemporal-dementia.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 252,
+      "brokenLinks": [
+        "alzheimers-disease",
+        "huntingtons-disease",
+        "parkinsons-disease"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "gastroesophageal-reflux-disease-gerd",
+      "title": "Gastroesophageal Reflux Disease (GERD)",
+      "type": "disease",
+      "path": "content/processed/diseases/gastroesophageal-reflux-disease-gerd.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 393,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "glomerulonephritis",
+      "title": "Glomerulonephritis",
+      "type": "disease",
+      "path": "content/processed/diseases/glomerulonephritis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 265,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "headaches",
+      "title": "Headaches",
+      "type": "disease",
+      "path": "content/processed/diseases/headaches.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 492,
+      "brokenLinks": [
+        "amitriptyline",
+        "erenumab",
+        "ibuprofen",
+        "ondansetron",
+        "propranolol",
+        "sumatriptan",
+        "temporal-arteritis",
+        "topiramate",
+        "verapamil"
+      ],
+      "qualityScore": 64,
+      "status": "repair_first"
+    },
+    {
+      "slug": "hematomas",
+      "title": "Hematomas",
+      "type": "disease",
+      "path": "content/processed/diseases/hematomas.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 456,
+      "brokenLinks": [
+        "hypertension",
+        "mannitol",
+        "protamine-sulfate",
+        "vitamin-k"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "hemolytic-uremic-syndrome-hus",
+      "title": "Hemolytic Uremic Syndrome (HUS)",
+      "type": "disease",
+      "path": "content/processed/diseases/hemolytic-uremic-syndrome-hus.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 281,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "hemophilia-a-and-b",
+      "title": "Hemophilia A & B",
+      "type": "disease",
+      "path": "content/processed/diseases/hemophilia-a-and-b.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 758,
+      "brokenLinks": [
+        "dic",
+        "dic-disseminated-intravascular-coagulation",
+        "factor-xi-deficiency",
+        "thrombocytopenia",
+        "von-willebrand-disease"
+      ],
+      "qualityScore": 80,
+      "status": "needs_review"
+    },
+    {
+      "slug": "hirschsprung-disease",
+      "title": "Hirschsprung Disease",
+      "type": "disease",
+      "path": "content/processed/diseases/hirschsprung-disease.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 361,
+      "brokenLinks": [
+        "pyloric-stenosis"
+      ],
+      "qualityScore": 96,
+      "status": "student_ready"
+    },
+    {
+      "slug": "huntington-s-disease",
+      "title": "Huntington's Disease",
+      "type": "disease",
+      "path": "content/processed/diseases/huntington-s-disease.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 240,
+      "brokenLinks": [
+        "parkinsons-disease"
+      ],
+      "qualityScore": 80,
+      "status": "needs_review"
+    },
+    {
+      "slug": "hydrocephalus",
+      "title": "Hydrocephalus",
+      "type": "disease",
+      "path": "content/processed/diseases/hydrocephalus.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 268,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "intussusception",
+      "title": "Intussusception",
+      "type": "disease",
+      "path": "content/processed/diseases/intussusception.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 390,
+      "brokenLinks": [
+        "pyloric-stenosis"
+      ],
+      "qualityScore": 96,
+      "status": "student_ready"
+    },
+    {
+      "slug": "meningitis",
+      "title": "Meningitis",
+      "type": "disease",
+      "path": "content/processed/diseases/meningitis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 522,
+      "brokenLinks": [
+        "assignments-meningitis-infographic-content",
+        "screenshot-2026-03-09-at-8-40-32-pm-png"
+      ],
+      "qualityScore": 92,
+      "status": "student_ready"
+    },
+    {
+      "slug": "motor-neuron-syndromes",
+      "title": "Motor Neuron Syndromes",
+      "type": "disease",
+      "path": "content/processed/diseases/motor-neuron-syndromes.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 563,
+      "brokenLinks": [
+        "als",
+        "baclofen",
+        "cervical-spondylosis",
+        "edaravone",
+        "ivig",
+        "riluzole",
+        "tizanidine"
+      ],
+      "qualityScore": 72,
+      "status": "needs_review"
+    },
+    {
+      "slug": "multiple-myeloma",
+      "title": "Multiple Myeloma",
+      "type": "disease",
+      "path": "content/processed/diseases/multiple-myeloma.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 543,
+      "brokenLinks": [
+        "mgus",
+        "waldenstr-m-macroglobulinemia"
+      ],
+      "qualityScore": 92,
+      "status": "student_ready"
+    },
+    {
+      "slug": "multiple-sclerosis-ms",
+      "title": "Multiple Sclerosis (MS)",
+      "type": "disease",
+      "path": "content/processed/diseases/multiple-sclerosis-ms.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 236,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "nephroblastoma-wilms-tumor",
+      "title": "Nephroblastoma (Wilms Tumor)",
+      "type": "disease",
+      "path": "content/processed/diseases/nephroblastoma-wilms-tumor.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 232,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "nephrolithiasis-kidney-stones",
+      "title": "Nephrolithiasis (Kidney Stones)",
+      "type": "disease",
+      "path": "content/processed/diseases/nephrolithiasis-kidney-stones.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 259,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "nephrotic-syndrome",
+      "title": "Nephrotic Syndrome",
+      "type": "disease",
+      "path": "content/processed/diseases/nephrotic-syndrome.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 236,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "neural-tube-defects",
+      "title": "Neural Tube Defects",
+      "type": "disease",
+      "path": "content/processed/diseases/neural-tube-defects.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 657,
+      "brokenLinks": [
+        "baclofen",
+        "cefotaxime",
+        "chiari-malformation",
+        "folic-acid",
+        "myelomeningocele-surgery",
+        "neurogenic-bladder",
+        "oxybutynin",
+        "peg-laxative"
+      ],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "neuromuscular-junction-disorders",
+      "title": "Neuromuscular Junction Disorders",
+      "type": "disease",
+      "path": "content/processed/diseases/neuromuscular-junction-disorders.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 607,
+      "brokenLinks": [
+        "ivig",
+        "lung-cancer-small-cell",
+        "mycophenolate-mofetil",
+        "pyridostigmine",
+        "respiratory-failure",
+        "thymoma"
+      ],
+      "qualityScore": 76,
+      "status": "needs_review"
+    },
+    {
+      "slug": "neuropathic-pain",
+      "title": "Neuropathic Pain",
+      "type": "disease",
+      "path": "content/processed/diseases/neuropathic-pain.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 534,
+      "brokenLinks": [
+        "amitriptyline",
+        "diabetic-ketoacidosis",
+        "duloxetine",
+        "gabapentin",
+        "pregabalin",
+        "venlafaxine"
+      ],
+      "qualityScore": 76,
+      "status": "needs_review"
+    },
+    {
+      "slug": "non-hodgkin-lymphoma",
+      "title": "Non-Hodgkin Lymphoma",
+      "type": "disease",
+      "path": "content/processed/diseases/non-hodgkin-lymphoma.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 624,
+      "brokenLinks": [
+        "chronic-lymphocytic-leukemia-cll",
+        "hodgkin-lymphoma",
+        "waldenstr-m-macroglobulinemia"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "olfactory-dysfunctions",
+      "title": "Olfactory Dysfunctions",
+      "type": "disease",
+      "path": "content/processed/diseases/olfactory-dysfunctions.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 704,
+      "brokenLinks": [
+        "alzhheimers-disease",
+        "mometasone",
+        "parkinsons-disease"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "pancreatitis",
+      "title": "Pancreatitis",
+      "type": "disease",
+      "path": "content/processed/diseases/pancreatitis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 363,
+      "brokenLinks": [
+        "assignments-digestive-presentation-pancreatitis",
+        "upper-gastrointestinal-bleeding"
+      ],
+      "qualityScore": 92,
+      "status": "student_ready"
+    },
+    {
+      "slug": "parkinson-s-disease",
+      "title": "Parkinson's Disease",
+      "type": "disease",
+      "path": "content/processed/diseases/parkinson-s-disease.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 232,
+      "brokenLinks": [
+        "alzheimers-disease",
+        "huntingtons-disease"
+      ],
+      "qualityScore": 76,
+      "status": "needs_review"
+    },
+    {
+      "slug": "peptic-ulcer-disease",
+      "title": "Peptic Ulcer Disease",
+      "type": "disease",
+      "path": "content/processed/diseases/peptic-ulcer-disease.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 345,
+      "brokenLinks": [
+        "gastritis",
+        "gerd",
+        "helicobacter-pylori",
+        "upper-gastrointestinal-bleeding"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "phenylketonuria-pku",
+      "title": "Phenylketonuria (PKU)",
+      "type": "disease",
+      "path": "content/processed/diseases/phenylketonuria-pku.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 257,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "pressure-ulcers",
+      "title": "Pressure Ulcers",
+      "type": "disease",
+      "path": "content/processed/diseases/pressure-ulcers.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 234,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "psoriasis-papulosquamous-disorder",
+      "title": "Psoriasis (Papulosquamous Disorder)",
+      "type": "disease",
+      "path": "content/processed/diseases/psoriasis-papulosquamous-disorder.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 221,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "pyelonephritis",
+      "title": "Pyelonephritis",
+      "type": "disease",
+      "path": "content/processed/diseases/pyelonephritis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 390,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "pyloric-stenosis-infantile-hypertrophic",
+      "title": "Pyloric Stenosis (Infantile Hypertrophic)",
+      "type": "disease",
+      "path": "content/processed/diseases/pyloric-stenosis-infantile-hypertrophic.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 383,
+      "brokenLinks": [],
+      "qualityScore": 100,
+      "status": "student_ready"
+    },
+    {
+      "slug": "renal-tumours",
+      "title": "Renal Tumours",
+      "type": "disease",
+      "path": "content/processed/diseases/renal-tumours.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 573,
+      "brokenLinks": [
+        "bladder-cancer",
+        "cisplatin",
+        "dactinomycin",
+        "everolimus",
+        "gemcitabine",
+        "nivolumab",
+        "pazopanib",
+        "renal-cell-carcinoma",
+        "sunitinib",
+        "von-hippel-lindau"
+      ],
+      "qualityScore": 60,
+      "status": "repair_first"
+    },
+    {
+      "slug": "seizures-and-epilepsy",
+      "title": "Seizures and Epilepsy",
+      "type": "disease",
+      "path": "content/processed/diseases/seizures-and-epilepsy.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 252,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "sickle-cell-anemia",
+      "title": "Sickle Cell Anemia",
+      "type": "disease",
+      "path": "content/processed/diseases/sickle-cell-anemia.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 548,
+      "brokenLinks": [
+        "acute-chest-syndrome",
+        "dic-disseminated-intravascular-coagulation",
+        "hemolytic-anemia",
+        "hemophilia-a",
+        "thrombocytopenia"
+      ],
+      "qualityScore": 80,
+      "status": "needs_review"
+    },
+    {
+      "slug": "skin-cancers",
+      "title": "Skin Cancers",
+      "type": "disease",
+      "path": "content/processed/diseases/skin-cancers.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 242,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "sleep-disorders",
+      "title": "Sleep Disorders",
+      "type": "disease",
+      "path": "content/processed/diseases/sleep-disorders.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 616,
+      "brokenLinks": [
+        "eszopiclone",
+        "ferrous-sulfate",
+        "modafinil",
+        "parkinsons-disease",
+        "pitolisant",
+        "pramipexole",
+        "ramelteon",
+        "sodium-oxybate"
+      ],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "spinal-cord-injury",
+      "title": "Spinal Cord Injury",
+      "type": "disease",
+      "path": "content/processed/diseases/spinal-cord-injury.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 724,
+      "brokenLinks": [
+        "dvt",
+        "enoxaparin",
+        "methylprednisolone",
+        "norepinephrine"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "taste-dysfunctions",
+      "title": "Taste Dysfunctions",
+      "type": "disease",
+      "path": "content/processed/diseases/taste-dysfunctions.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 750,
+      "brokenLinks": [
+        "gabapentin",
+        "pilocarpine",
+        "zinc"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "ulcerative-colitis",
+      "title": "Ulcerative Colitis",
+      "type": "disease",
+      "path": "content/processed/diseases/ulcerative-colitis.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 405,
+      "brokenLinks": [
+        "crohns-disease",
+        "diverticular-disease",
+        "infectious-colitis",
+        "irritable-bowel-syndrome-ibs"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "urinary-incontinence",
+      "title": "Urinary Incontinence",
+      "type": "disease",
+      "path": "content/processed/diseases/urinary-incontinence.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 648,
+      "brokenLinks": [
+        "benign-prostatic-hyperplasia",
+        "bethanechol",
+        "botulinum-toxin",
+        "duloxetine",
+        "estrogen-topical",
+        "finasteride",
+        "menopause",
+        "mirabegron",
+        "neurogenic-bladder",
+        "oxybutynin",
+        "solifenacin",
+        "tolterodine"
+      ],
+      "qualityScore": 52,
+      "status": "repair_first"
+    },
+    {
+      "slug": "urinary-tract-infection-uti",
+      "title": "Urinary Tract Infection (UTI)",
+      "type": "disease",
+      "path": "content/processed/diseases/urinary-tract-infection-uti.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 244,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "urinary-tract-obstruction",
+      "title": "Urinary Tract Obstruction",
+      "type": "disease",
+      "path": "content/processed/diseases/urinary-tract-obstruction.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 443,
+      "brokenLinks": [
+        "benign-prostatic-hyperplasia",
+        "ceftriaxone",
+        "ketorolac",
+        "urosepsis"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "vertebral-injuries",
+      "title": "Vertebral Injuries",
+      "type": "disease",
+      "path": "content/processed/diseases/vertebral-injuries.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 457,
+      "brokenLinks": [
+        "baclofen",
+        "enoxaparin",
+        "gabapentin",
+        "osteoporosis"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "vesicoureteral-reflux-vur",
+      "title": "Vesicoureteral Reflux (VUR)",
+      "type": "disease",
+      "path": "content/processed/diseases/vesicoureteral-reflux-vur.md",
+      "missingHeadings": [
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 249,
+      "brokenLinks": [],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "acetaminophen",
+      "title": "Acetaminophen",
+      "type": "drug",
+      "path": "content/processed/drugs/acetaminophen.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 107,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "acyclovir",
+      "title": "Acyclovir",
+      "type": "drug",
+      "path": "content/processed/drugs/acyclovir.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 99,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "albumin",
+      "title": "Albumin",
+      "type": "drug",
+      "path": "content/processed/drugs/albumin.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 289,
+      "brokenLinks": [
+        "ace-inhibitors-arbs",
+        "loop-diuretics",
+        "potassium-supplements",
+        "sodium-restricted-diet"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "allopurinol",
+      "title": "Allopurinol",
+      "type": "drug",
+      "path": "content/processed/drugs/allopurinol.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 93,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "amoxicillin",
+      "title": "Amoxicillin",
+      "type": "drug",
+      "path": "content/processed/drugs/amoxicillin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 107,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "azathioprine",
+      "title": "Azathioprine",
+      "type": "drug",
+      "path": "content/processed/drugs/azathioprine.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 98,
+      "brokenLinks": [
+        "crohns-disease"
+      ],
+      "qualityScore": 64,
+      "status": "repair_first"
+    },
+    {
+      "slug": "benzoyl-peroxide",
+      "title": "Benzoyl Peroxide",
+      "type": "drug",
+      "path": "content/processed/drugs/benzoyl-peroxide.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 98,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "brentuximab-vedotin",
+      "title": "Brentuximab Vedotin",
+      "type": "drug",
+      "path": "content/processed/drugs/brentuximab-vedotin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 98,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "calcium-carbonate",
+      "title": "Calcium Carbonate",
+      "type": "drug",
+      "path": "content/processed/drugs/calcium-carbonate.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 318,
+      "brokenLinks": [
+        "ace-inhibitors-arbs",
+        "dietary-phosphate-restriction",
+        "loop-diuretics",
+        "sevelamer"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "ciprofloxacin",
+      "title": "Ciprofloxacin",
+      "type": "drug",
+      "path": "content/processed/drugs/ciprofloxacin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 98,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "cyclophosphamide",
+      "title": "Cyclophosphamide",
+      "type": "drug",
+      "path": "content/processed/drugs/cyclophosphamide.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 103,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "desmopressin",
+      "title": "Desmopressin",
+      "type": "drug",
+      "path": "content/processed/drugs/desmopressin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 105,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "dexamethasone",
+      "title": "Dexamethasone",
+      "type": "drug",
+      "path": "content/processed/drugs/dexamethasone.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 102,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "donepezil",
+      "title": "Donepezil",
+      "type": "drug",
+      "path": "content/processed/drugs/donepezil.md",
+      "missingHeadings": [
+        "Study Snapshot",
+        "What It Is",
+        "Monitor For",
+        "Major Safety Flags"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 82,
+      "brokenLinks": [
+        "alzheimers-disease"
+      ],
+      "qualityScore": 64,
+      "status": "repair_first"
+    },
+    {
+      "slug": "dopamine",
+      "title": "Dopamine",
+      "type": "drug",
+      "path": "content/processed/drugs/dopamine.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 104,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "doxorubicin",
+      "title": "Doxorubicin",
+      "type": "drug",
+      "path": "content/processed/drugs/doxorubicin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 101,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "fentanyl",
+      "title": "Fentanyl",
+      "type": "drug",
+      "path": "content/processed/drugs/fentanyl.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 92,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "furosemide",
+      "title": "Furosemide",
+      "type": "drug",
+      "path": "content/processed/drugs/furosemide.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 333,
+      "brokenLinks": [
+        "ace-inhibitors-arbs",
+        "potassium-supplements",
+        "thiazide-diuretics"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "heparin",
+      "title": "Heparin",
+      "type": "drug",
+      "path": "content/processed/drugs/heparin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 97,
+      "brokenLinks": [
+        "dic-disseminated-intravascular-coagulation"
+      ],
+      "qualityScore": 64,
+      "status": "repair_first"
+    },
+    {
+      "slug": "hydroxyurea",
+      "title": "Hydroxyurea",
+      "type": "drug",
+      "path": "content/processed/drugs/hydroxyurea.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 100,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "insulin",
+      "title": "Insulin",
+      "type": "drug",
+      "path": "content/processed/drugs/insulin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 107,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "isotretinoin",
+      "title": "Isotretinoin",
+      "type": "drug",
+      "path": "content/processed/drugs/isotretinoin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 93,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "l-glutamine",
+      "title": "L-Glutamine",
+      "type": "drug",
+      "path": "content/processed/drugs/l-glutamine.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 97,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "lactulose",
+      "title": "Lactulose",
+      "type": "drug",
+      "path": "content/processed/drugs/lactulose.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 116,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "lisinopril",
+      "title": "Lisinopril",
+      "type": "drug",
+      "path": "content/processed/drugs/lisinopril.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 319,
+      "brokenLinks": [
+        "angiotensin-ii-receptor-blockers-arbs",
+        "beta-blockers",
+        "diuretics",
+        "potassium-supplements"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "metformin",
+      "title": "Metformin",
+      "type": "drug",
+      "path": "content/processed/drugs/metformin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 90,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "metronidazole",
+      "title": "Metronidazole",
+      "type": "drug",
+      "path": "content/processed/drugs/metronidazole.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 115,
+      "brokenLinks": [
+        "crohns-disease",
+        "diverticular-disease"
+      ],
+      "qualityScore": 60,
+      "status": "repair_first"
+    },
+    {
+      "slug": "morphine",
+      "title": "Morphine",
+      "type": "drug",
+      "path": "content/processed/drugs/morphine.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 94,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "nitrofurantoin",
+      "title": "Nitrofurantoin",
+      "type": "drug",
+      "path": "content/processed/drugs/nitrofurantoin.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 271,
+      "brokenLinks": [
+        "other-uti-antibiotics",
+        "phenazopyridine",
+        "probiotics"
+      ],
+      "qualityScore": 88,
+      "status": "needs_review"
+    },
+    {
+      "slug": "pantoprazole",
+      "title": "Pantoprazole",
+      "type": "drug",
+      "path": "content/processed/drugs/pantoprazole.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 106,
+      "brokenLinks": [
+        "gerd"
+      ],
+      "qualityScore": 64,
+      "status": "repair_first"
+    },
+    {
+      "slug": "prednisone",
+      "title": "Prednisone",
+      "type": "drug",
+      "path": "content/processed/drugs/prednisone.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 367,
+      "brokenLinks": [
+        "calcium-supplements-and-vitamin-d",
+        "crohns-disease",
+        "immunosuppressants",
+        "other-corticosteroids",
+        "proton-pump-inhibitors-ppis"
+      ],
+      "qualityScore": 80,
+      "status": "needs_review"
+    },
+    {
+      "slug": "ranitidine",
+      "title": "Ranitidine",
+      "type": "drug",
+      "path": "content/processed/drugs/ranitidine.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 113,
+      "brokenLinks": [
+        "gerd"
+      ],
+      "qualityScore": 64,
+      "status": "repair_first"
+    },
+    {
+      "slug": "rituximab",
+      "title": "Rituximab",
+      "type": "drug",
+      "path": "content/processed/drugs/rituximab.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 106,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "spironolactone",
+      "title": "Spironolactone",
+      "type": "drug",
+      "path": "content/processed/drugs/spironolactone.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 103,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "sulfonylureas-drug-card",
+      "title": "Sulfonylureas Drug Card",
+      "type": "drug",
+      "path": "content/processed/drugs/sulfonylureas-drug-card.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 308,
+      "brokenLinks": [],
+      "qualityScore": 76,
+      "status": "needs_review"
+    },
+    {
+      "slug": "tamsulosin",
+      "title": "Tamsulosin",
+      "type": "drug",
+      "path": "content/processed/drugs/tamsulosin.md",
+      "missingHeadings": [],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 258,
+      "brokenLinks": [
+        "5-alpha-reductase-inhibitors",
+        "antihypertensives",
+        "nsaids",
+        "other-alpha-blockers"
+      ],
+      "qualityScore": 84,
+      "status": "needs_review"
+    },
+    {
+      "slug": "vincristine",
+      "title": "Vincristine",
+      "type": "drug",
+      "path": "content/processed/drugs/vincristine.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 104,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "voxelotor",
+      "title": "Voxelotor",
+      "type": "drug",
+      "path": "content/processed/drugs/voxelotor.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 116,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    },
+    {
+      "slug": "warfarin",
+      "title": "Warfarin",
+      "type": "drug",
+      "path": "content/processed/drugs/warfarin.md",
+      "missingHeadings": [
+        "Before Giving: What To Check",
+        "Major Safety Flags",
+        "Exam Layer",
+        "Exam Clues"
+      ],
+      "placeholderLinks": [],
+      "notSpecifiedCount": 0,
+      "riskyDirectiveCount": 0,
+      "wordCount": 106,
+      "brokenLinks": [],
+      "qualityScore": 68,
+      "status": "repair_first"
+    }
+  ]
+}
